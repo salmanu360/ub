@@ -1,13 +1,18 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-
+use yii\helpers\ArrayHelper;
+use kartik\select2\Select2;
 /**
 * @var yii\web\View $this
 * @var backend\models\ForStudentsSearch $model
 * @var yii\widgets\ActiveForm $form
 */
+$leadStatus = ArrayHelper::map(\common\models\LeadStatuses::find()->all(), 'id', 'name');
+$rm = ArrayHelper::map(\common\models\User::find()->where(['type'=>5])->all(), 'id', 'username');
+$recruiters = ArrayHelper::map(\common\models\Recruiters::find()->all(), 'id',function($model){return $model->owner_first_name .' '.$model->owner_last_name;});
 ?>
 
 <div class="for-students-search">
@@ -21,40 +26,70 @@ use yii\widgets\ActiveForm;
 
 		<!-- <?//= $form->field($model, 'user_id') ?> -->
 
-		<div class="col-md-6">
+	<div class="col-md-4">
 		<?= $form->field($model, 'ID')->label('Unique ID') ?>
 		
 
-<?= $form->field($model, 'last_name') ?>
+		<?= $form->field($model, 'last_name') ?>
 
-<?= $form->field($model, 'email_id') ?>
+		<?= $form->field($model, 'email_id') ?>
 
-<?php  //echo $form->field($model, 'phone_no') ?>
+		
 
-<?php // echo $form->field($model, 'gender') ?>
+		<?php // echo $form->field($model, 'gender') ?>
 
-<?php // echo $form->field($model, 'country_of_citizenship') ?>
+		<?php // echo $form->field($model, 'country_of_citizenship') ?>
 
-		</div>
-
-		<div class="col-md-6">
+	</div>
+		
+	<div class="col-md-4">
 		<?= $form->field($model, 'first_name') ?>
-<?php // echo $form->field($model, 'marital_status') ?>
+		<?php // echo $form->field($model, 'marital_status') ?>
 
-<?php // echo $form->field($model, 'country_of_interest') ?>
+		<?php // echo $form->field($model, 'country_of_interest') ?>
 
-<?php // echo $form->field($model, 'service_of_interest') ?>
+		<?php // echo $form->field($model, 'service_of_interest') ?>
 
-<?php  echo $form->field($model, 'passport_no') ?>
+		<?php  echo $form->field($model, 'passport_no') ?>
+		<?=$form->field($model, 'lead_status')->widget(Select2::classname(), [
+			'data' => $leadStatus,
+			'options' => ['placeholder' => 'Status'],
+			'pluginOptions' => [
+				'allowClear' => true,
+				'autocomplete' => false
+			],
+			]) ?>
 
-<?php // echo $form->field($model, 'passport_expiry_date') ?>
+			<?php // echo $form->field($model, 'passport_expiry_date') ?>
 
-<?php // echo $form->field($model, 'address') ?>
+			<?php // echo $form->field($model, 'address') ?>
 
-<?php  //echo $form->field($model, 'city') ?>
+			<?php  //echo $form->field($model, 'city') ?>
 
-<?php  //echo $form->field($model, 'state') ?>
-		</div>
+			<?php  //echo $form->field($model, 'state') ?>
+	</div>
+	<div class="col-md-4">
+		<?=$form->field($model, 'rm_id')->widget(Select2::classname(), [
+			'data' => $rm,
+			'options' => ['placeholder' => 'RM'],
+			'pluginOptions' => [
+				'allowClear' => true,
+				'autocomplete' => false
+			],
+			])->label("RM") ?>
+	</div>
+
+	<div class="col-md-4">
+		<?=$form->field($model, 'recruiter_id')->widget(Select2::classname(), [
+			'data' => $recruiters,
+			'options' => ['placeholder' => 'Recruiter'],
+			'pluginOptions' => [
+				'allowClear' => true,
+				'autocomplete' => false
+			],
+			]) ?>
+			<?php  echo $form->field($model, 'phone_no') ?>
+	</div>
 
 		<?php // echo $form->field($model, 'country') ?>
 
@@ -140,7 +175,8 @@ use yii\widgets\ActiveForm;
 		<div class="col-md-6">
 			<div class="form-group">
 				<?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-				<?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+				<a href="<?php echo Url::to(['student/index'])?>" class="btn btn-default">Reset</a>
+				
 			</div>
 		</div>
 	
