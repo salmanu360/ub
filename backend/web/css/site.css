@@ -1,0 +1,53 @@
+.main_container .nav_menu {
+    background: #f0393a;
+    border-bottom: 1px solid #f0393a;
+}
+
+.main_container .nav_menu .nav li a.user-profile {
+    color: #ffffff !important;
+}
+
+.main_container .nav_menu .nav li > a:focus,
+.main_container .nav_menu .nav li > a:hover {
+    background: none;
+}
+
+.main_container .nav_menu .nav #menu_toggle i {
+    color: #ffffff !important;
+}
+
+.navbar img.big-logo {
+    width: 190px;
+}
+.navbar img.favicon {
+    width: 42px;
+}
+
+.nav-sm .big-logo{
+    display: none;
+}
+.nav-sm .favicon{
+    display: block;
+}
+
+.nav-md .big-logo{
+    display: block;
+}
+.nav-md .favicon{
+    display: none;
+}
+
+.body .left_col {
+    padding-top: 8px !important;
+}
+
+
+.main_menu_side {
+    padding: 0;
+    max-height: 600px;
+    height: auto;
+    overflow-y: scroll;
+}
+.nav-md .container.body .right_col {
+    min-height: 760px !important;
+}
