@@ -1,0 +1,530 @@
+/* css by amit 12-02-2022 */
+
+.login-header {
+    /* background: rgb(0 0 0 / 80%); */
+    background-image: url("../images/banner-1.jpg");
+    background-size: cover;
+}
+
+.login-panel{
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.site-login, .site-signup {
+    border-radius: 0.375rem;
+    padding: 20px;
+    background-color: #f7fafc;
+    box-shadow: rgb(0 0 0 / 20%) 1px 3px 10px 1px;
+}
+
+.register-container{
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.contacts-link li button.top-header-btn {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    padding: 3px 15px;
+    margin-left: 0px;
+    margin-top: 3px;
+    text-decoration: none;
+    outline: none;
+    transition: 0.3s;
+    display: inline-block;
+    border: 1px solid #fff;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+.contacts-link li button.top-header-btn:hover{
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background: transparent;
+    background: #f0393a;
+    border: 1px solid #f0393a;
+}
+
+/* form div.required label::after{
+    content:" * ";
+    color:red;
+} */
+
+form div.required label.custom-control-label:after {
+    content: " ";
+    color: inherit;
+}
+
+.tab-pane .border-bottom {
+    border: none !important;
+}
+
+#recruiter_form .step-anchor {
+    width: 100%;
+}
+
+#recruiter_form .step-anchor li.nav-item{
+    float: left;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    width: 33%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+    text-align: center; /* If you want the text to be centered */
+}
+
+#recruiter_form .sw-theme-material ul.step-anchor>li.active a {
+    background-color: #0F6888!important;
+    color: #fff!important;
+    cursor: default;
+    padding: 1em 3em;
+}
+
+.step-content .iti.iti--allow-dropdown {
+    width: 100%;
+}
+
+#School .select2-selection__rendered {
+    line-height: 43px !important;
+    padding: 0.12rem 1.2rem 0.75rem 0.75rem;
+}
+#School .select2-container .select2-selection--single {
+    height: 45px !important;
+    box-shadow: 5px 0px 13px 0px #dcdcdc !important;
+    border: 1px solid #e4e4e4 !important;
+}
+#School .select2-selection__arrow {
+    height: 44px !important;
+}
+
+#step-1 .select2-selection__rendered {
+    line-height: 43px !important;
+}
+#step-1 .select2-container .select2-selection--single {
+    height: 45px !important;
+    box-shadow: 5px 0px 13px 0px #dcdcdc !important;
+    border: 1px solid #e4e4e4 !important;
+}
+#step-1 .select2-selection__arrow {
+    height: 44px !important;
+}
+
+.has-error .help-block-error {
+    position: relative;
+    padding: 0.25rem 0.75rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-radius: 3px;
+    display: block;
+    margin: 2px 0 10px;
+    font-size: .8rem;
+}
+
+label.new-btn {
+    top: -20px !important;
+}
+
+#Student .nav-tabs {
+    border-bottom: none;
+}
+
+.dashboard-main-body { 
+    min-height: 800px;
+}
+ span.input-group-addon.kv-date-remove {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+ span.input-group-addon.kv-date-picker {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.select2-container--krajee .select2-selection--single {
+    height: 45px;
+    line-height: 2;
+    padding: 10px;
+}
+
+.select2-container--krajee .select2-selection--single .select2-selection__arrow{
+    height: 44px;
+}
+
+.seperator{
+    padding: 0 10px;
+}
+
+.media-body span a {
+    text-decoration: none;
+}
+
+.dashboard-card .student-summary {
+    margin-bottom: 20px;
+}
+
+.reg-date {
+    margin-bottom: 10px;
+}
+
+.field-student-phone_no .iti {
+    display: block !important;
+}
+
+.field-student-graduated_recent_school{
+    padding-top: 35px;
+}
+#Student-profile .form-group {
+    margin-bottom: 20px;
+}
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+/* temp tab css */
+.tab-content {
+    padding-top: 20px;
+}
+
+ul#w1 li {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+ul#w1 li a{
+    text-decoration: none;
+}
+
+ul#w1 li.active{
+    background: #f0393a;
+}
+
+ul#w1 li.active a{
+    color: #ffffff;
+}
+
+.iti.iti--allow-dropdown {
+    width: 100%;
+}
+
+/* .btn-file span {
+    color: #ffffff;
+}
+.btn-file {
+    width: 100%;
+} */
+.company-logo {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+/* The overlay effect (full height and width) - lays on top of the container and over the image */
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: 60px;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(123, 121, 116, 0.8);
+  }
+  
+  /* When you mouse over the container, fade in the overlay icon*/
+  .company-logo:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* The icon inside the overlay is positioned in the middle vertically and horizontally */
+  .overlay .icon {
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  /* When you move the mouse over the icon, change color */
+  .overlay .fa-user:hover {
+    color: #eee;
+  }
+
+  .file-icon i{
+    font-size: 35px;
+  }
+
+  .school-search .control-label {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-family: 'montserratsemibold';
+  }
+ .school-search .form-group{
+    margin-bottom: 1rem!important;
+}
+
+.field-student-refused_visa {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.field-student-refused_visa > div{
+    margin-left: 10px;
+}
+
+.logout-btn button.nav-link {
+    background: none !important;
+    border: 0;
+}
+
+.left-sidebar-footer {
+    position: absolute;
+    bottom: 0px;
+    clear: both;
+    /*display: block;*/
+    padding: 5px 0 0 0;
+    width: 240px;
+    z-index: 999;
+}
+.left-sidebar-footer .nav-item a{
+    font-size: 12px;
+    font-family: 'montserratsemibold';
+}
+
+.header-link{
+    font-size: 1.1rem;
+    font-family: 'montserratsemibold';
+    color: #575757;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+.nav-tabs li{
+    color: #0f6889;
+    font-size: 1.1rem;
+    font-family: 'montserratsemibold';
+    border-bottom: 1px dashed #d5d5d5;
+    padding-bottom: 10px;
+}
+
+.nav-tabs li.active a {
+    color: #f0393a;
+}
+
+.nav-tabs li a {
+    color: #0f6889;
+    text-decoration: none;
+}
+
+.programs-college-tabs{
+    position: relative;
+    bottom: 5px;
+    overflow: hidden;
+}
+.programs-college-tabs ul {
+    display: contents;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -1px;
+}
+.programs-college-tabs li {
+    flex-grow: inherit;
+    flex-basis: auto;
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    background-color: #fff;
+}
+.programs-college-tabs .nav-tabs{
+    border-bottom: none;
+}
+
+.college-text .d-flex p{
+    font-size: 14px;
+}
+/*.programs .collage-img{
+    width: 50%;
+}*/
+.pagination li.active a{
+    background-color: #f0393a;
+    border-color: #f0393a;
+    color: #ffffff;
+}
+.pagination li{
+    padding: 0;
+}
+.pagination li.disabled {
+    padding: 5px 0px;
+    display: none;
+}
+.pagination li a{
+    position: relative;
+    display: block;
+    padding: 0.375rem 0.75rem;
+    color: #575757;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.left-sidebar-footer .social-icons li a {
+    border: 1px solid #f0393a;
+}
+.ias-trigger {
+    background: transparent;
+    border: 1px solid #f0393a;
+    margin: 0 auto;
+    width: 25%;
+    padding: 5px;
+    color: #f0393a;
+    border-radius: 5px;
+}
+#pro-col li.active {
+    border-bottom: 2px solid #f0393a;
+}
+
+.other-team .account-manager {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid #ffffff;
+    box-shadow: 4px 1px 15px rgb(0 0 0 / 20%);
+}
+
+.right-border{
+  border-right: 1px dashed #d5d5d5;
+}
+
+.upper-card{
+    margin-bottom: 30px;
+}
+
+#pjax-main .x_content ul.recruiter-studs {
+   margin-top: 40px !important; 
+}
+
+ul#w26 {
+    margin-top: 40px;
+}
+
+.payment-history-index .filter-buttons {
+    margin-top: 20px;
+}
+.payment-history-index #paymentFilter {
+    margin-bottom: 30px;
+}
+/* .payment-comm .report-icon {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+} */
+/* .payment-comm .report-title {
+    font-size: 14px;
+} */
+.payment-comm .report-content {
+    padding: 0 10px;
+    text-align: left;
+}
+
+.report-tiels .line{
+    display: inline-block;
+    border-right: 1px dashed #ccc;
+    padding: 10px;
+}
+.report-tiels .line:last-child{
+    border-right:none;
+}
+/* end css amit */
+
+
+.main_menu_side {
+    padding: 0;
+    max-height: 600px;
+    height: auto;
+    overflow-y: scroll;
+}
+
+#signature-pad .signature-pad--body canvas{
+    box-shadow: 0px 0px 6px #afafaf;
+    -webkit-box-shadow: 0px 0px 6px #afafaf;
+    -moz-box-shadow: 0px 0px 6px #afafaf;
+    -ms-box-shadow: 0px 0px 6px #afafaf;
+}
+.field-mouform-signature #mouform-signature{
+    height: auto;
+}
+
+button.button.save {
+    background: #23b17c;
+    color: #fff;
+    text-align: center;
+    padding: 5px 15px;
+    margin-top: 10px;
+    text-decoration: none;
+    outline: none;
+    transition: 0.3s;
+    display: inline-block;
+    border: 1px solid transparent;
+    margin-right: 7px;
+    font-size: .8rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button.button.clear{
+    background: #f0393a;
+    color: #fff;
+    text-align: center;
+    padding: 5px 15px;
+    margin-top: 10px;
+    text-decoration: none;
+    outline: none;
+    transition: 0.3s;
+    display: inline-block;
+    border: 1px solid transparent;
+    margin-right: 7px;
+    font-size: .8rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button[data-action="undo"]{
+    background: #f0393a;
+    color: #fff;
+    text-align: center;
+    padding: 5px 15px;
+    margin-top: 10px;
+    text-decoration: none;
+    outline: none;
+    transition: 0.3s;
+    display: inline-block;
+    border: 1px solid transparent;
+    margin-right: 7px;
+    font-size: .8rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.signature-pad--actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+button.accept{
+    display: none;
+}
