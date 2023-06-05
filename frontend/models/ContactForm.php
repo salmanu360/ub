@@ -68,8 +68,8 @@ class ContactForm extends Model
 
               Yii::$app->mailer->compose('@frontend/mail/recadmin',['model'=>$this])
             ->setFrom('noreply@universitybureau.com')
-            ->setTo("noreply@universitybureau.com")
-            // ->setTo("noreply@universitybureau.com")
+            ->setTo('student@universitybureau.com')
+            //->setTo("noreply@universitybureau.com")
             ->setSubject('Test Email UB')
             //->setTextBody('Plain text content. YII2 Application')
             //->setHtmlBody('<b>This is another test for HTML content <i>University bureau </i></b>')

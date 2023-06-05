@@ -24,16 +24,17 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
       </div>
     </section>
-    <p>
-           <?php if (Yii::$app->session->hasFlash('success')): ?>
+     <p>
+          <?php if (Yii::$app->session->hasFlash('success')): ?>
            <div class="alert alert-success">
+               <?php echo "here";die;?>
               <?= Yii::$app->session->getFlash('success') ?>
            </div>
             <?php endif; ?>
             
     <?php
                     $st = Yii::$app->session->getFlash('success');
-                    echo '<pre>';print_r($st);die;
+                   // echo '<pre>';print_r($st);die;
                     if(!empty($st)) { ?>
                         <div class="alert alert-success">
                             <p >  <?=  $st[0]; ?></p>
@@ -95,7 +96,7 @@ $this->params['breadcrumbs'][] = $this->title;
           <div class="col-md-7 text-center"> 
             <h2 class="common-heading">Contact <span>Details</span></h2>
             <div class="row lets-started-row">
-              <div class="col-md-6 m-auto">
+              <div class="col-md-12 m-auto mb-3">
                 <div class="register-boxes">
                   <a href="mailto:help@universitybureau.com">
                     <i class="fas fa-envelope"></i>
@@ -103,11 +104,11 @@ $this->params['breadcrumbs'][] = $this->title;
                   </a>
                 </div>
               </div>
-              <div class="col-md-6 m-auto">
+              <div class="col-md-12 m-auto">
                 <div class="register-boxes">
-                  <a href="tel:9819-XXX-XXX">
+                  <a href="tel:+91-9355500042">
                     <i class="fas fa-phone-square-alt"></i>
-                    <label>0806-900-9000</label>
+                    <label>93-555-000-42</label>
                   </a>
                 </div>
               </div>

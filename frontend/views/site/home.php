@@ -7,7 +7,7 @@ use common\models\School;
 use common\models\Country;
 use common\models\SchoolImage;   
 
-$this->title = "Best Overseas Education Consultant for Students in India- Online Study Abroad Recruitment Platform for Institutions, Recruiters - University Bureau";
+$this->title = "Best Overseas Education Consultant for Students in India- Online Study Abroad Recruitment Platform for Institutions, Recruiters";
 $this->registerMetaTag(['name' => 'description', 'content' =>  "University Bureau is  the most experienced overseas education advisor in India. Our Study Abroad advisor will help you out by giving you best study abroad counselling to students and also become best online study abroad recruitment platform for recruiters and Institutions"]);
 $this->registerMetaTag(['name' => 'keywords', 'content' =>  "Online Recruitment Platform"]);
 
@@ -218,7 +218,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' =>  "Online Recruitment 
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
-              <p><a href="#"><img src="images/play-icon.png" alt="Play-Icon"></a></p>
+              <!--<p><a href="#"><img src="images/play-icon.png" alt="Play-Icon"></a></p>-->
               <h1>Just Everything you need to connect with  <br><span>Institutes, Students, and Recruitment Partners across the Globe.</span></h1>
             </div>
           </div>
@@ -501,6 +501,80 @@ $this->registerMetaTag(['name' => 'keywords', 'content' =>  "Online Recruitment 
 
                         <?php endforeach; ?>
                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <section class="study-destinaton-section">
+        <div class="container">
+            <div class="row">
+                <div class="studydes_head">
+                    <img src="images/Study Destination test.png" alt="study destinaton">
+                </div>
+                <div class="studydes_main">
+                    <div class="studydes-container">
+                        <a href="<?= Url::to(['/country/study-in-canada'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-1.png" alt="">
+                                <h6><b>Study In Canada</b></h6>
+                            </div>
+                        </a>
+                        <a href="<?= Url::to(['/country/study-in-australia'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-2.png" alt="">
+                                <h6><b>Study In Australia</b></h6>
+                            </div>
+                        </a>
+                        <a href="<?= Url::to(['/country/study-in-switzerland'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-3.png" alt="">
+                                <h6><b>Study In Switzerland</b></h6>
+                            </div>
+                        </a>
+                        <a href="<?= Url::to(['/country/study-in-united-kingdom'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-4.png" alt="">
+                                <h6><b>Study In United Kingdom</b></h6>
+                            </div>
+                        </a>
+                        <a href="<?= Url::to(['/country/study-in-united-state-of-america'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-5.png" alt="">
+                                <h6><b>Study In U.S.A</b></h6>
+                            </div>
+                        </a>
+                        <a href="<?= Url::to(['/country/study-in-ireland'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-6.png" alt="">
+                                <h6><b>Study In Ireland</b></h6>
+                            </div>
+                        </a>
+                        <a href="<?= Url::to(['/country/study-in-france'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-7.png" alt="">
+                                <h6><b>Study In France</b></h6>
+                            </div>
+                        </a>
+                        <a href="<?= Url::to(['/country/study-in-germany'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-8.png" alt="">
+                                <h6><b>Study In Germany</b></h6>
+                            </div>
+                        </a>
+                        <a href="<?= Url::to(['/country/study-in-latvia'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-9.png" alt="">
+                                <h6><b>Study In Latvia</b></h6>
+                            </div>
+                        </a>
+                        <a href="<?= Url::to(['/country/study-in-europe'])?>">
+                            <div class="studydes-card">
+                                <img src="images/studydes-img-10.png" alt="">
+                                <h6><b>Study In Europe</b></h6>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

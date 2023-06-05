@@ -38,6 +38,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
+            //'class' => 'yii\web\DbSession',
             'name' => 'advanced-frontend',
            // 'autoStart' => true,
         ],
@@ -59,7 +60,6 @@ return [
                 'host' => 'mail.universitybureau.com',
                 'username' => 'salman@universitybureau.com',
                 'password' => '3ovj))2QQNzw',
-                // 'password' => 'Admin.ub@1234',
                 'port' => '465',
                 'encryption' => 'ssl',
                 'streamOptions' => [
@@ -76,7 +76,9 @@ return [
         'request' => [
             'baseUrl' => $baseUrl,
         ],
-
+        'smsOtpApiRequest' => [
+            'class' => 'frontend\components\SmsOtpApiRequest',
+        ],
          'as beforeRequest' => [
             'class' => 'yii\filters\AccessControl',
             'rules' => [
@@ -105,20 +107,21 @@ return [
                 'search-college/index' => 'search-college/index',
                 'search-college/<slug>' => 'search-college/detail',
                 'college/<slug>' => 'search-college/detail',
-                '<alias:index|about|canada>' => 'site/<alias>',
                 //'search-college/<slug:\w+(-\w+)+>' => 'search-college/detail',
+                'notifications/poll' => '/notifications/notifications/poll',
+                'notifications/rnr' => '/notifications/notifications/rnr',
+                'notifications/read' => '/notifications/notifications/read',
+                'notifications/read-all' => '/notifications/notifications/read-all',
+                'notifications/delete-all' => '/notifications/notifications/delete-all',
+                'notifications/delete' => '/notifications/notifications/delete',
+                'notifications/flash' => '/notifications/notifications/flash',
+                '<alias:index|best-universities-in-canada|united-states|new-zeeland|best-universities-in-aus|best-universities-in-uk|study-abroad-destinations|canada|uk|aus|eur|usa|new|europe>' => 'site/<alias>',
                 
             ],
         ],
         'assetManager' => [
             'appendTimestamp' => true,
             'bundles' => [
-                'yii2mod\alert\AlertAsset' => [
-                'css' => [
-                    'dist/sweetalert.css',
-                    'themes/twitter/twitter.css',
-                    ]
-                ],
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => [],
                 ],
@@ -139,7 +142,7 @@ return [
             'orientation' => Pdf::ORIENT_PORTRAIT,
             'destination' => Pdf::DEST_BROWSER,
             // refer settings section for all configuration options
-        ]        
+        ],             
     ],
     'modules' => [
         'school' => [
@@ -156,6 +159,21 @@ return [
             'class' => 'frontend\modules\student\Module',
             'defaultRoute' => 'default/index',
             'layout' => '/home-layout'
+        ],
+        'notifications' => [
+            'class' => 'machour\yii2\notifications\NotificationsModule',
+            // Point this to your own Notification class
+            // See the "Declaring your notifications" section below
+            'notificationClass' => 'common\components\Notification',
+            // Allow to have notification with same (user_id, key, key_id)
+            // Default to FALSE
+            'allowDuplicate' => false,
+            // Allow custom date formatting in database
+            'dbDateFormat' => 'Y-m-d H:i:s',
+            // This callable should return your logged in user Id
+            'userId' => function () {
+                return \Yii::$app->user->id;
+            },
         ],
     ],
     'params' => $params,

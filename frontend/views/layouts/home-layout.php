@@ -33,6 +33,9 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name='verify-v1' content='01887400be7cf71b46fd788648196e67'/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="facebook-domain-verification" content="9dd3x748aniq7wwqp6fzo7j82bqed0" />
+    <meta name="p:domain_verify" content="ee54ac2da73c8ad911fcc16616960620"/>
+
     <?php if($controller->id == 'search-college'): ?>
     <meta name="robots" content="noindex">
     <?php endif; ?>
@@ -45,11 +48,24 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"> 
 
+
 <!-- Pixel Code for https://socialproof.universitybureau.com/ -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script defer src="https://socialproof.universitybureau.com/pixel/nu4nhw25cqg8oa4jsfba2ucseuxo9lsl"></script>
 <!-- END Pixel Code -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-218810195-1"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9794662527342450" crossorigin="anonymous"></script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2GR8C4R32"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q2GR8C4R32');
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -57,8 +73,35 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 
   gtag('config', 'UA-218810195-1');
 </script>   
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '422295843120344');
+fbq('track', 'PageView');
+</script>
+
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=422295843120344&ev=PageView&noscript=1"
+/></noscript>
+<script
+     type="text/javascript"
+     src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+     id="aisensy-wa-widget"
+     widget-id="dNPf1x">
+</script>
 </head>
 <body>
+
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=422295843120344&ev=PageView&noscript=1"
+/></noscript>
 <?php $this->beginBody() ?>
 
 <?php
@@ -74,8 +117,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
           <div class="row align-items-center">
             <div class="col-md-6 text-start desktop-view-only">
               <ul class="contacts-link">
-                <li><a href="tel:<?=Yii::$app->params["setting"]["phone"]?>"><i class="fa fa-phone-alt call-ani"></i> <?=Yii::$app->params["setting"]["phone"]?></a></li>
-                 <li><a href="tel: 9355500042"><i class="fa fa-phone-alt call-ani"></i>  93-555-000-42 </a></li>
+                <!--<li><a href="tel:<?=Yii::$app->params["setting"]["phone"]?>"><i class="fa fa-phone-alt call-ani"></i> <?=Yii::$app->params["setting"]["phone"]?></a></li>-->
+                 <li><a href="tel:+91-9355500042"><i class="fa fa-phone-alt call-ani"></i>+91 93-555-000-42 </a></li>
                 <li><a href="mailto:<?=Yii::$app->params["setting"]["email"]?>"><i class="fa fa-envelope call-ani"></i> <?=Yii::$app->params["setting"]["email"]?></a></li>
               </ul>
               <!-- <ul class="social-icons">
@@ -150,6 +193,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                               <a class="dropdown-item" href="<?= Url::to(['/country/study-in-france'])?>">Study In France</a>
                               <a class="dropdown-item" href="<?= Url::to(['/country/study-in-germany'])?>">Study In Germany</a> 
                               <a class="dropdown-item" href="<?= Url::to(['/country/study-in-latvia'])?>">Study In Latvia</a> 
+                              <!--<a class="dropdown-item" href="<?= Url::to(['/country/study-in-italy'])?>">Study In Italy</a> -->
                               <a class="dropdown-item" href="<?= Url::to(['/country/study-in-europe'])?>">Study In Europe</a> 
                               <!-- <a class="dropdown-item" href="<?= Url::to(['/country/study-in-australia'])?>">Study In Australia</a> -->
                               
@@ -163,7 +207,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                               <li>
                                 <h4>Helpdesk Support</h4>
                               </li>
-                              <li><a href="tel:+91-XXXXXXXXXX"><i class="fa fa-phone-alt"></i> 806-900-9000</a></li>
+                              <li><a href="tel:+91-9355500042"><i class="fa fa-phone-alt"></i>+91 93-555-000-42</a></li>
                               <li><a href="mailto:support@universitybureau.com"><i class="fa fa-envelope"></i>
                                   support@universitybureau.com</a></li>
                             </ul>
@@ -238,7 +282,6 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
     </header>
 
     <!-- views -->
-    <?= Alert::widget() ?>
     <?php echo $content ?>
 
     <footer>
@@ -250,7 +293,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                      <!--  <li><a href="#">Publisher</a></li>
                       <li><a href="#">Advertiser</a></li>
                       <li><a href="#">Affiliated</a></li> -->
-                      <li><a href="#">Search Program</a></li>
+                      <li><a href="<?=URL::to('study-abroad-destinations')?>">Study Abroad Destinations</a></li>
                       <li><a href="<?=URL::to('service/institutions')?>">Search Institutions</a></li>
                       
                       <li><a href="<?=URL::to('about-us')?>">About Us</a></li>
@@ -300,7 +343,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                   <h5>Get In Touch</h5>
 
                   <ul class="footer-list-1">
-                      <li><i class="fa fa-phone-alt"></i> <a href="tel:<?=Yii::$app->params["setting"]["phone"]?>"><?=Yii::$app->params["setting"]["phone"]?> </a></li>
+                      <!--<li><i class="fa fa-phone-alt"></i> <a href="tel:<?=Yii::$app->params["setting"]["phone"]?>"><?=Yii::$app->params["setting"]["phone"]?> </a></li>-->
+                      <li><a href="tel: 9355500042"><i class="fa fa-phone-alt"></i>  93-555-000-42 </a></li>
                       <li><i class="fa fa-envelope"></i> <a href="mailto:<?=Yii::$app->params["setting"]["email"]?>"><?=Yii::$app->params["setting"]["email"]?></a></li>
                     </ul>
 

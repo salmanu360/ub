@@ -3,7 +3,7 @@
     use frontend\components\CounterArchiveWidget;
 
 
-$this->title = "Study Abroad Consultant| Best Overseas Education  Consultant";
+$this->title = "Study Abroad Consultant | Best Overseas Education Consultant";
 $this->registerMetaTag(['name' => 'description', 'content' =>  "Planning to Study Abroad? Get free Study Abroad Counselling from University Bureau Overseas Education Expert. We are providing numerous study abroad programs to students all around the world. We are taking care of complete study abroad admission  process to make your dream true"]);
 $this->registerMetaTag(['name' => 'keywords', 'content' =>  "Study abroad programs, Visa Interview Preperation"]);
 

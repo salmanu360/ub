@@ -17,8 +17,17 @@ if (isset($actionColumnTemplates)) {
 $actionColumnTemplate = implode(' ', $actionColumnTemplates);
     $actionColumnTemplateString = $actionColumnTemplate;
 } else {
-Yii::$app->view->params['pageButtons'] = Html::a('<span class="glyphicon glyphicon-plus"></span> ' . 'New', ['create'], ['class' => 'btn btn-success']);
-    $actionColumnTemplateString = "{view} {update} {delete}";
+    if(\Yii::$app->user->identity->type==3){
+        \Yii::$app->view->params['pageButtons'] = Html::a('<span class="glyphicon glyphicon-plus"></span> ' . 'New', ['create'], ['class' => 'btn btn-success']);
+        $actionColumnTemplateString = "{view} {update} {delete}";
+    }else{
+        $is_action= \Yii::$app->userAccess->getAccessModule(\Yii::$app->user->identity->type,'course');
+        $is_add=  \Yii::$app->userAccess->isShowAdd(\Yii::$app->user->identity->type,'course');
+        if($is_add){
+            \Yii::$app->view->params['pageButtons'] = Html::a('<span class="glyphicon glyphicon-plus"></span> ' . 'New', ['create'], ['class' => 'btn btn-success']);
+        }
+        $actionColumnTemplateString =  $is_action;
+    }
 }
 $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTemplateString.'</div>';
 ?>
@@ -40,6 +49,7 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
     <div class="clearfix crud-navigation">
         <div class="pull-left">
             <?= Html::a('<span class="glyphicon glyphicon-plus"></span> ' . 'New', ['create'], ['class' => 'btn btn-success']) ?>
+            <?= Html::a('<span class="glyphicon glyphicon-plus"></span> ' . 'Upload Excel', ['uploadexcel'], ['class' => 'btn btn-primary']) ?>
         </div>
 
         <div class="pull-right">

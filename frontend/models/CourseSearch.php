@@ -18,13 +18,16 @@ class CourseSearch extends Course {
     /**
     * @inheritdoc
     */
+   
     public function rules() {    
         return [
             [['id', 'college_id', 'discount', 'status', 'created_at', 'updated_at'], 'integer'],
             [['tution_fee', 'application_fee'], 'number'],
-            [['name', 'tags','schoolName','course_category','program'], 'safe'],
+            [['name', 'tags','schoolName','course_category','duration','program','intake','province','country_id'], 'safe'],
         ];
     }
+    
+   
 
     /**
     * @inheritdoc
@@ -41,56 +44,7 @@ class CourseSearch extends Course {
     *
     * @return ActiveDataProvider
     */
-
-    public function coursefilter($params) {
-        // echo '<pre>';print_r($params);die;
-        if(!empty($params['CourseSearch']['status'])){
-            $course_id= $params['CourseSearch']['status'];
-            $intake= $params['CourseSearch']['intake'];
-            $year= $params['CourseSearch']['year'];
-        
-        
-        $query = Course::find()->where(['id'=>$course_id]);
-        $query->joinWith(['school']);    
-         
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
-
-        $dataProvider->sort->attributes['schoolName'] = [
-            'asc' => ['school.name' => SORT_ASC],
-            'desc' => ['school.name' => SORT_DESC],
-        ];
-
-        $this->load($params);
-
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to any records when validation fails
-            // $query->where('0=1');
-            return $dataProvider;
-        }
-
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'college_id' => $this->college_id,
-            'tution_fee' => $this->tution_fee,
-            'application_fee' => $this->application_fee,
-            'discount' => $this->discount,
-            'status' => $this->status,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-        ]);
-
-        $query->andFilterWhere(['like', 'school.name', $this->schoolName]);
-
-        $query->andFilterWhere(['like', 'course.name', $this->name])
-            ->andFilterWhere(['like', 'course.tags', $this->tags]);
-
-        return $dataProvider;
-    }
-    }
     public function search($params) {
-        echo "<pre>";print_r($params);die;
         $query = Course::find();
         $query->joinWith(['school']);    
          
@@ -118,6 +72,11 @@ class CourseSearch extends Course {
             'application_fee' => $this->application_fee,
             'discount' => $this->discount,
             'status' => $this->status,
+            'program' => $this->program,
+            // 'province' => $this->province,
+            'country_id' => $this->country_id,
+            'course_category' => $this->course_category,
+            // 'intake' => $this->intake,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);
@@ -125,10 +84,18 @@ class CourseSearch extends Course {
         $query->andFilterWhere(['like', 'school.name', $this->schoolName]);
 
         $query->andFilterWhere(['like', 'course.name', $this->name])
-            ->andFilterWhere(['like', 'course.tags', $this->tags]);
+        ->andFilterWhere(['like', 'course.country_id', $this->country_id])
+        ->andFilterWhere(['like', 'course.course_category', $this->course_category])
+        ->andFilterWhere(['like', 'course.duration', $this->duration])
+        ->andFilterWhere(['like', 'course.province', $this->province])
+        ->andFilterWhere(['like', 'course.program', $this->program])
+        ->andFilterWhere(['like', 'course.intake', $this->intake])
+              ->andFilterWhere(['like', 'course.tags', $this->tags]);
 
         return $dataProvider;
     }
+    
+    
 
     public static function getCollegeByCourseId($id){
         $course = Course::findOne($id);

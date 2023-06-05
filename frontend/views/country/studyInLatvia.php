@@ -1,18 +1,56 @@
 <?php
   use yii\helpers\Html;
   use yii\bootstrap\ActiveForm;
-    $this->title = " Study In Latvia - Top Universities,Benefits,Eligibility Criteria,Scholorships,Colleges,Fees,Intakes, Admissions,Requirements , With Ilets  Without Ilets ,Popular Courses , Study Visa  - University Bureau";
-    $this->registerMetaTag(['name' => 'description', 'content' =>  "Do you want to Study in Latvia ?  Get  counselling from our Latvia Study Abroad consultant who will guide you : Why study in Latvia, Choose top universities in Latvia including information related to eligibility criteria, admission procedure popular courses and many more...Benefits of study in Latvia"]);
+    $this->title = "Study in Latvia - Universities, Colleges, Courses, Eligibility, Admission Process, Cost";
+    $this->registerMetaTag(['name' => 'description', 'content' =>  "Wants to Study in Latvia? Get advice from Latvia Study Abroad Consultant who will provides complete details on Top Latvia Colleges, Universities, 2023 Intakes, Study Programs and Courses, Visa Process and many more"]);
     // $this->registerMetaTag(['name' => 'keywords', 'content' =>  "Study In Latvia"]);
 
 ?>
-<section class="banner-menu mob-inner-height">
-    <div class="bg-video-wrap">
-        <img src="images/latvia-landing-page-banner.jpg" alt="banner-img" class="desktop-view-only w-100">
-        <img src="images/latvia-landing-page-banner.jpg" alt="banner-img" class="mob-view-only w-100">
-        <div class="landing-page-banner-overlay"></div>
+
+  <section class="banner-menu mob-inner-height lp-banner-height">
+    <div class="row lead-form-main">
+      <div class="col-md-6 p-0"></div>
+      <div class="col-md-6 p-0">
+        <div class="lead-form-body">
+          <div class="col-md-12 header-section_form">
+               <?php $form = ActiveForm::begin([
+                'action' => ['studycanadashortform'],
+                'method' => 'post',
+                ]); ?>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <i class="fas fa-user-tie"></i>
+                          <input type="text" id="name" class="form-control"
+                                        name="GetInTouchCountry[name]" placeholder="Name*" aria-required="true" required>
+                      </div>
+                      <div class="col-md-12">
+                          <i class="fa fa-envelope"></i>
+                          
+                          <input type="email" id="email" class="form-control"
+                                        name="GetInTouchCountry[email]" aria-required="true" placeholder="Email*" required>
+                      </div>
+                      <div class="col-md-12">
+                          <i class="fa fa-phone-alt"></i>
+                          <input type="hidden" value="Latvia" name="GetInTouchCountry[study_country]">
+                          <input type="text" id="appliedcouncilstudent-phone" class="form-control"
+                                        name="GetInTouchCountry[phone]" aria-required="true" placeholder="Phone*" required>
+                        
+                      </div>
+                          
+                      <button type="submit">Get In Touch</button>
+
+                  </div>
+              <?php ActiveForm::end(); ?>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+    <div class="bg-video-wrap-lp">
+      <img src="images/latvia-landing-page-banner.jpg" alt="banner-img" class="desktop-view-only w-100">
+      <img src="images/latvia-landing-page-banner-mob.jpg" alt="banner-img" class="mob-view-only w-100">
+      <div class="landing-page-banner-overlay"></div>
+    </div>
+  </section> 
 
 
 <div class="landing-page-main-section">
@@ -465,44 +503,44 @@
                 </div>
                 <div class="col-md-12 lpage-top-universities-slider">
                     <div class="row">
-                        <div class="3-col-items">
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                        <div class="3-col-items" style="display: flex; flex-wrap: wrap;">
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-1.jpg">
                                 <h4>Latvijas Universitate</h4>
                             </div>
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-2.jpg">
                                 <h4>Rigas Tehniska universitate</h4>
                             </div>
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-3.jpg">
                                 <h4>Latvijas Lauksaimniecibas universitate</h4>
                             </div>
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-4.jpg">
                                 <h4>Rezeknes Tehnologiju Akademija</h4>
                             </div>
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-5.jpg">
                                 <h4>Rigas Stradina Universitate</h4>
                             </div>
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-6.jpg">
                                 <h4>Biznesa augstskola Turiba</h4>
                             </div>
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-7.jpg">
                                 <h4>Daugavpils Universitate</h4>
                             </div>
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-8.jpg">
                                 <h4>Latvijas Makslas akademija</h4>
                             </div>
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-9.jpg">
                                 <h4>Rigas Ekonomikas augstskola</h4>
                             </div>
-                            <div class="col-md-4"><img class="w-100 p-2 h-100"
+                            <div class="col-md-4" style="padding-bottom: 25px;"><img class="w-100 p-2 h-100"
                                     src="images/lat-top-university-img-10.jpg">
                                 <h4>Liepajas Universitate</h4>
                             </div>

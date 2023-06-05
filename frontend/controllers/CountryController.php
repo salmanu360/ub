@@ -107,7 +107,7 @@ class CountryController extends \yii\web\Controller
                     <p>Email: '.$model->email.'</p>
                     <p>Phone: '.$model->phone.'</p>
                     <p>Study Country: '.$model->study_country.'</p>
-                    <p>Date: '.$model->date_created.'</p>
+                    
                     ')
             ->send();
                 return $this->render('/thank/country_thanks');
@@ -571,6 +571,36 @@ class CountryController extends \yii\web\Controller
         }
        
         return $this->render('studyInGreece');
+    }
+    
+    public function actionCollegeCanada()
+    {
+        return $this->render('collegeCanada');
+    }
+
+    public function actionCollegeUnitedKingdom()
+    {
+        return $this->render('collegeUnitedKingdom');
+    }
+
+    public function actionCollegeAustralia()
+    {
+        return $this->render('collegeAustralia');
+    }
+
+    public function actionCollegeEurope()
+    {
+        return $this->render('collegeEurope');
+    }
+
+    public function actionCollegeUsa()
+    {
+        return $this->render('collegeUsa');
+    }
+
+    public function actionCollegeNewZeland()
+    {
+        return $this->render('collegeNewZeland');
     }
 
 }

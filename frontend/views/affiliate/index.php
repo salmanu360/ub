@@ -1,10 +1,4 @@
 <!----------------------- affilate page -------------------------------------------->
-<?php
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use yii\helpers\Url;
-$this->title = 'Affiliates';
-?>
 
 <section class="banner-menu mob-inner-height">
     <div class="bg-video-wrap-affilate">
@@ -117,31 +111,26 @@ $this->title = 'Affiliates';
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <?php $form = ActiveForm::begin(); ?>
+          <form action="" method="post">
             <div class="row apage-signup-form-container">
               <div class="col-md-12">
                 <h2 class="apage-signup-form-heading">Sign in with your <br>account here!</h2>
               </div>
-
               <div class="col-md-6 apage-signup-form-input-box">
-                <!-- <input type="text" name="first_name" id="first_name" placeholder="First name" required> -->
-                <?= $form->field($model, 'first_name')->textInput(['id' => 'first_name','placeholder'=>'First name','required'=>'required']) ?>
+                <input type="text" name="first_name" id="first_name" placeholder="First name" required>
               </div>
               <div class="col-md-6 apage-signup-form-input-box">
-                <!-- <input type="text" name="last_name" id="last_name" placeholder="Last name" required> -->
-                <?= $form->field($model, 'last_name')->textInput(['id' => 'last_name','placeholder'=>'Last name','required'=>'required']) ?>
+                <input type="text" name="last_name" id="last_name" placeholder="Last name" required>
               </div>
               <div class="col-md-12 apage-signup-form-input-box">
-                <!-- <input type="email" name="user_email" id="user_email" placeholder="Email" required> -->
-                <?= $form->field($model, 'email')->textInput(['id' => 'user_email','placeholder'=>'Email','required'=>'required']) ?>
+                <input type="email" name="user_email" id="user_email" placeholder="Email" required>
               </div>
               <div class="col-md-12 apage-signup-form-spacer"></div>
               <div class="col-md-12 apage-signup-form-submit-box">
-                <!-- <button type="submit">Join Us</button> -->
-                <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                <button type="submit">Join Us</button>
               </div>
             </div>
-          <?php ActiveForm::end(); ?>
+          </form>
         </div>
         <div class="col-md-6 apage-signup-form-img-box">
           <img src="images/signup-img.webp">

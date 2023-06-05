@@ -6,7 +6,7 @@ use yii\helpers\StringHelper;
 use kartik\select2\Select2;
 use frontend\components\CounterArchiveWidget;
 
-$this->title = "International  Students Recruitment Services - University Bureau";
+$this->title = "International  Students Recruitment Services ";
 $this->registerMetaTag(['name' => 'description', 'content' =>  "International students recruitment  Services - We help institutions to connect with international students and recruitment partners on our online recruitment platform and choose best students for your institute "]);
 $this->registerMetaTag(['name' => 'keywords', 'content' =>  "International students  recruitment services"]);
 

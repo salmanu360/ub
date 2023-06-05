@@ -111,7 +111,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-                    $notification=new \common\models\Notification();
+            $notification=new \common\models\Notification();
                     $notification->created_by=$model->username;
                     $notification->created_at=date('Y-m-d');
                     $notification->module='Recruiter Login';
@@ -132,8 +132,8 @@ class SiteController extends Controller
                 $recruiter_id = Yii::$app->user->identity->recruiter->id;                
                 $mouExisting = \common\models\MouDetail::find()->where(['recruiter_id' => $recruiter_id])->exists();
                 if(!$mouExisting){               
-                   // Yii::$app->response->redirect(['recruiter/mou']);
-                     Yii::$app->response->redirect(['recruiter/dashboard']);
+                    // Yii::$app->response->redirect(['recruiter/mou']);
+                    Yii::$app->response->redirect(['recruiter/dashboard']);
                 } else {
                     Yii::$app->response->redirect(['recruiter/dashboard']);
                 }
@@ -186,7 +186,7 @@ class SiteController extends Controller
         $Contactmodel = new \common\models\Contact();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $Contactmodel->name=$_POST['ContactForm']['name'];
+             $Contactmodel->name=$_POST['ContactForm']['name'];
             $Contactmodel->email=$_POST['ContactForm']['email'];
             $Contactmodel->contact_number=$_POST['ContactForm']['phone'];
             $Contactmodel->subject=$_POST['ContactForm']['subject'];
@@ -194,9 +194,11 @@ class SiteController extends Controller
             $Contactmodel->save(false);
             
             if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                Yii::$app->getSession()->addFlash('success', "Thank you for contacting us. We will respond to you as soon as possible.");
+                //Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
             } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+                //Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+                Yii::$app->getSession()->addFlash('success', "There was an error sending your message.");
             }
             // die('test');
             return $this->redirect(['site/contact']);
@@ -214,9 +216,55 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionAbout()
-    {
+    { 
         return $this->render('about');
     }
+    public function actionCanada()
+    { 
+        return $this->render('canada');
+    }
+    
+    
+    public function actionBestUniversitiesInUk()
+    { 
+        return $this->render('uk');
+    }
+    
+    public function actionBestUniversitiesInAus()
+    { 
+        return $this->render('aus');
+    }
+    
+     public function actionNewZeeland()
+    { 
+        return $this->render('new');
+    }
+    
+    
+    public function actionUnitedStates()
+    { 
+        return $this->render('usa');
+    }
+    
+    public function actionEurope()
+    { 
+        return $this->render('eur');
+    }
+    
+    
+    public function actionStudyAbroadDestinations()
+    {
+        
+        return $this->render('studyabroaddestinations');
+    }
+    
+    
+    public function actionBestUniversitiesInCanada()
+    { 
+        return $this->render('canada');
+    }
+    
+    
 
     public function actionRegister()
     {
@@ -237,8 +285,6 @@ class SiteController extends Controller
 
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            // echo '<pre>';print_r($salman.u360+student@gmail.com);die;
-            
             Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
             //return $this->redirect(['site/signup']);
             return $this->redirect(['/thank']);
@@ -260,8 +306,8 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
                 Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-                // return $this->goHome();
                 return $this->redirect(['/thank/requestpasswordresetemail']);
+                //return $this->goHome();
             }
             Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
         }
@@ -288,9 +334,8 @@ class SiteController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
             Yii::$app->session->setFlash('success', 'New password saved.');
-
-            // return $this->goHome();
-             return $this->redirect(['/thank/resetpasswordthank']);
+            return $this->redirect(['/thank/resetpasswordthank']);
+            //return $this->goHome();
         }
 
         return $this->render('resetPassword', [

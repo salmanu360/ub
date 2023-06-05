@@ -79,7 +79,6 @@ public function actionLogout()
                     $model->ref_no="UBI".$model->id;
 
                     $model->save(false);
-
                     $notification=new \common\models\Notification();
                     $notification->created_by='New Institute';
                     $notification->created_at=date('Y-m-d');

@@ -14,7 +14,6 @@ class AppAsset extends AssetBundle
     public $css = [
         'https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css',
         'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css',
-        // 'https://unpkg.com/sweetalert/dist/sweetalert.min.js',
         'css/bootstrap.min.css',
         'css/style.css',
         'css/dashboard.css',

@@ -1,0 +1,2 @@
+user id is which login message
+char_room_id is to which he message

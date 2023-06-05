@@ -25,7 +25,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' =>  "University Bureau A
     </div>
 </section>
 
-<section class="about-ub connect-top mt-5 mb-5">
+<section class="about-ub connect-top mt-5 pb-3">
     <div class="container">
     <div class="row">
         <div class="col-md-12 text-center mb-3">
@@ -49,11 +49,11 @@ $this->registerMetaTag(['name' => 'keywords', 'content' =>  "University Bureau A
     </div>
 </section>
 
-<section class="our-founders mb-5 mt-5">
+<section class="our-founders mb-5 mt-3">
     <div class="container">
     <div class="row">
         <div class="col-md-12 text-center mb-3">
-        <h2 class="common-heading">Our<span>Founders</span></h2>
+        <h2 class="common-heading">Our <span>Founders</span></h2>
         <p>Our team of experts understands your unique challenges and makes you stand out from the rest- by working with you at every step of the way.We assure you to deliver the quality and compliance checks in the industry.</p>
         </div>
     </div>

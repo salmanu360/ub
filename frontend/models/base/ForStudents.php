@@ -109,7 +109,7 @@ abstract class ForStudents extends \yii\db\ActiveRecord
             [['gender', 'zip_code'], 'string', 'max' => 10],
             [['country_of_interest', 'service_of_interest', 'city', 'state', 'highest_level_education', 'study_permit'], 'string', 'max' => 200],
             [['passport_no'], 'string', 'max' => 20],
-            [['grading_scheme', 'grade_average', 'english_exam_type', 'upload_document','ten_certificate'], 'string', 'max' => 255]
+            [['grading_scheme', 'grade_average', 'english_exam_type', 'upload_document'], 'string', 'max' => 255]
         ];
     }
 

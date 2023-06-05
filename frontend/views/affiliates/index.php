@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
-use frontend\widgets\Alert;
 $this->title = 'Affiliates';
 ?>
 <section class="banner-menu mob-inner-height">
@@ -17,24 +16,12 @@ $this->title = 'Affiliates';
   <section class="affilate-page-student-study mt-5 mb-3">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <?php 
-          if (Yii::$app->session->hasFlash('success')): ?>
-           <div class="alert alert-success">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-              <?= Yii::$app->session->getFlash('success') ?>
-           </div>
-            <?php endif;?>
-        </div>
-        </div>
-      </div>
-      <div class="row">
         <div class="col-md-6 p-3 apage-student-study-img-container">
           <img src="images/world-img.png">
         </div>
         <div class="col-md-6 pb-3">
           <h2 class="apage-student-study-heading">We are looking <br>for Students who<br> Want to  <br><span>Study</span> abroad</h2>
-          
+        </div>
         <div class="col-md-12 text-center pt-3">
           <p class="apage-student-study-text">
             Guidance, training, scholarships, and counseling, Here to help your friends find their journey abroad.
@@ -132,7 +119,7 @@ $this->title = 'Affiliates';
           <?php $form = ActiveForm::begin(); ?>
             <div class="row apage-signup-form-container">
               <div class="col-md-12">
-                <h2 class="apage-signup-form-heading">Signsdf in with your <br>account here!</h2>
+                <h2 class="apage-signup-form-heading">Sign in with your <br>account here!</h2>
               </div>
               <div class="col-md-6 apage-signup-form-input-box">
                <?= $form->field($model, 'first_name')->textInput(['id' => 'first_name','placeholder'=>'First name','required'=>'required'])->label(false) ?>
@@ -219,7 +206,7 @@ $this->title = 'Affiliates';
 -        <b> Aysha, a Housewife from Chandigarh</b></p>
               </div>
              <div class="apage-testimonial-avtar">
-                <img src="images/testimonial-avtar-img.png">
+                <img src="images/testimonial-avtar-img.png" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;width: 150px;height: 150px;">
               </div>
             </div>
             <div class="col-md-4 apage-testimonial-inner">
@@ -229,7 +216,7 @@ $this->title = 'Affiliates';
 -         <b>Sia, doing a job in a call center</b></p>
               </div>
              <div class="apage-testimonial-avtar">
-                <img src="images/testimonial-avtar-img.png">
+                <img src="images/testimonial-coma-img-3.jpg" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;width: 150px;height: 150px;">
               </div>
             </div>
             <div class="col-md-4 apage-testimonial-inner">
@@ -239,7 +226,7 @@ $this->title = 'Affiliates';
 -         <b>Sia, doing a job in a call center</b></p>
               </div>
              <div class="apage-testimonial-avtar">
-                <img src="images/testimonial-avtar-img.png">
+                <img src="images/testimonial-coma-img-3.jpg" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;width: 150px;height: 150px;">
               </div>
             </div>
           </div>
@@ -365,10 +352,4 @@ $this->title = 'Affiliates';
       </div>
     </div>
   </section>
-  <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
-  <script type="text/javascript">
-  /*window.addEventListener('load',function(){
-    swal("Good job!", "You clicked the button!", "success");
-  });*/
   
-</script>

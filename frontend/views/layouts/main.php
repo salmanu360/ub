@@ -30,6 +30,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <met a name="facebook-domain-verification" content="9dd3x748aniq7wwqp6fzo7j82bqed0" />
     <?php Html::csrfMetaTags() ?>
     <base href="<?= Url::home(true) ?>" />
     <title> <?= Html::encode($this->title) .' - '. Yii::$app->name ?> </title>
@@ -37,7 +38,8 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
     
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">    
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">  
+    
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -55,7 +57,6 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
           <div class="row align-items-center">
             <div class="col-md-6 text-start desktop-view-only">
               <ul class="contacts-link">
-                <li><a href="tel:<?=Yii::$app->params["setting"]["phone"]?>"><i class="fa fa-phone-alt call-ani"></i> <?=Yii::$app->params["setting"]["phone"]?></a></li>
                 <li><a href="mailto:<?=Yii::$app->params["setting"]["email"]?>"><i class="fa fa-envelope call-ani"></i> <?=Yii::$app->params["setting"]["email"]?></a></li>
               </ul>
               <ul class="social-icons">
@@ -155,7 +156,6 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                   </li>
                   <li class="nav-item ">
                     <a class="nav-link <?= ($controller->action->id=='institutions')?'active':'' ?>" href="<?= Url::to(['/service/institutions'])?>"><i class="fas fa-university"></i>Institutions </a>
-                  </li>
                 </ul>
               </div>
 
@@ -193,11 +193,13 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                      <!--  <li><a href="#">Publisher</a></li>
                       <li><a href="#">Advertiser</a></li>
                       <li><a href="#">Affiliated</a></li> -->
-                      <li><a href="#">Search Program</a></li>
+                      <li><a href="<?=URL::to('study-abroad-destinations')?>">Study Abroad Destinations</a></li>
                       <li><a href="<?=URL::to('service/institutions')?>">Search Institutions</a></li>
                       
                       <li><a href="<?=URL::to('about-us')?>">About Us</a></li>
                       <li><a href="<?=URL::to('site/contact')?>">Contact</a></li>
+                      <li><a href="<?=URL::to('affiliates')?>">Affiliate</a></li>
+                      
                 
 
 
@@ -206,32 +208,56 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
                 <div class="col-md-3">
                     <h5>Other Links</h5>
                     <ul class="footer-list">
-                      <li><a href="<?= Url::to(['/page/our-story'])?>">Our Story</a></li>
-                      <li><a href="<?= Url::to(['/help'])?>">Careers</a></li>
-                      <li><a href="<?= Url::to(['/page/leadership'])?>">Leadership</a></li>
+                      <li><a href="<?= Url::to(['/story'])?>">Our Story</a></li>
+                      <li><a href="<?= Url::to(['/carrer'])?>">Careers</a></li>
+                      <li><a href="<?= Url::to(['/blogs'])?>">Blogs</a></li>
                       <li><a href="<?= Url::to(['/faq'])?>">FAQ</a></li>
-                    
+                      
+                       
+
+
                     </ul>
                 </div>
+
+
+
                 <div class="col-md-3">
-                    <h5>Call Us Today</h5>
-                    <ul class="footer-list-1">
-                      <li><i class="fa fa-phone-alt"></i> <a href="tel:<?=Yii::$app->params["setting"]["phone"]?>"><?=Yii::$app->params["setting"]["phone"]?> </a></li>
+                    <h5>Our Policies</h5>
+
+                     <ul class="footer-list">
+
+                      <li><a href="<?= Url::to(['/page/privacy-and-cookies-policy'])?>">Privacy And Policy</a></li>
+                       <li><a href="<?= Url::to(['/page/terms-and-conditions'])?>">Terms And Conditions</a></li>
+
+                       <li><a href="<?= Url::to(['/page/refund-policy'])?>">Refund Policies</a></li>
+
+
+                     </ul>
+                  </div>
+
+
+
+
+
+                <div class="col-md-3">
+                  <h5>Get In Touch</h5>
+
+                  <ul class="footer-list-1">
+                      <!--<li><i class="fa fa-phone-alt"></i> <a href="tel:<?=Yii::$app->params["setting"]["phone"]?>"><?=Yii::$app->params["setting"]["phone"]?> </a></li>-->
+                      <li><a href="tel: 9355500042"><i class="fa fa-phone-alt"></i>  93-555-000-42 </a></li>
                       <li><i class="fa fa-envelope"></i> <a href="mailto:<?=Yii::$app->params["setting"]["email"]?>"><?=Yii::$app->params["setting"]["email"]?></a></li>
                     </ul>
-                    <ul class="social-icons mt-3">
+
+                  <ul class="footer-list-1">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>Head Office :</strong> C-127, 3rd Floor, Sec-2, NOIDA - 201301</li>
+                  </ul>
+                                        <ul class="social-icons mt-3">
                       <li><a href="https://www.facebook.com/universitybureau "><i class="fab fa-facebook-f"></i></a></li>
                       <li><a href="https://twitter.com/universitybure1 "><i class="fab fa-twitter"></i></a></li>
                       <li><a href="https://www.linkedin.com/company/universitybureau"><i class="fab fa-linkedin-in"></i></a></li>
                       <li><a href="https://www.instagram.com/universitybureau/  "><i class="fab fa-instagram"></i></a></li>
                       <li><a href="https://www.youtube.com/channel/UCXXDl1FUiEf1C57TwoJylJA"><i class="fab fa-youtube"></i></a></li>
                     </ul>
-                  </div>
-                <div class="col-md-3">
-                  <h5>Address</h5>
-                  <ul class="footer-list-1">
-                    <li><i class="fas fa-map-marker-alt"></i> <strong>Head Office :</strong> C-127, 3rd Floor, Sec-2, NOIDA - 201301</li>
-                  </ul>
                 </div>
             </div>
         </div>
@@ -239,7 +265,7 @@ $isHome = (($controller->id === $default_controller) && ($controller->action->id
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <p class="mb-0"><small>&copy; Universitybureau <?=date('Y')?> | All Rights Reserved</small> </p>
+                        <p class="mb-0"><small>&copy; Universitybureau 2019-<?=date('Y')?> | All Rights Reserved</small> </p>
                     </div>
                 </div>
             </div>

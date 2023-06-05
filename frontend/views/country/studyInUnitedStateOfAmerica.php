@@ -1,18 +1,56 @@
 <?php
   use yii\helpers\Html;
   use yii\bootstrap\ActiveForm;
-    $this->title = " Study In USA - Top Universities,Benefits,Eligibility Criteria,Scholorships,Colleges,Fees,Intakes, Admissions,Requirements , With Ilets  Without Ilets ,Popular Courses , Study Visa  - University Bureau";
-    $this->registerMetaTag(['name' => 'description', 'content' =>  "Do you want to Study in USA ?  Get  counselling from our USA Study Abroad consultant who will guide you : Why study in USA, Choose top universities in USA including information related to eligibility criteria, admission procedure popular courses and many more...Benefits of study in USA"]);
+    $this->title = "Study in USA - Universities, Colleges, Courses, Eligibility, Admission  Process, Cost";
+    $this->registerMetaTag(['name' => 'description', 'content' =>  "Wants to Study in USA? Get advice from USA Study Abroad Consultant who will provides complete details on Top USA Colleges, Universities, 2023 Intakes, Study Programs and Courses, Visa Process and many more"]);
     // $this->registerMetaTag(['name' => 'keywords', 'content' =>  "Study In USA"]);
 
-?>c
-<section class="banner-menu mob-inner-height">
-    <div class="bg-video-wrap">
-        <img src="images/usa-landing-page-banner.jpg" alt="banner-img" class="desktop-view-only w-100">
-        <img src="images/usa-landing-page-banner.jpg" alt="banner-img" class="mob-view-only w-100">
-        <div class="landing-page-banner-overlay"></div>
+?>
+  <section class="banner-menu mob-inner-height lp-banner-height">
+    <div class="row lead-form-main">
+      <div class="col-md-6 p-0"></div>
+      <div class="col-md-6 p-0">
+        <div class="lead-form-body">
+          <div class="col-md-12 header-section_form">
+               <?php $form = ActiveForm::begin([
+                'action' => ['studycanadashortform'],
+                'method' => 'post',
+                ]); ?>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <i class="fas fa-user-tie"></i>
+                          <input type="text" id="name" class="form-control"
+                                        name="GetInTouchCountry[name]" placeholder="Name*" aria-required="true" required>
+                      </div>
+                      <div class="col-md-12">
+                          <i class="fa fa-envelope"></i>
+                          
+                          <input type="email" id="email" class="form-control"
+                                        name="GetInTouchCountry[email]" aria-required="true" placeholder="Email*" required>
+                      </div>
+                      <div class="col-md-12">
+                          <i class="fa fa-phone-alt"></i>
+                          <input type="hidden" value="UnitedStateOfAmerica" name="GetInTouchCountry[study_country]">
+                          <input type="text" id="appliedcouncilstudent-phone" class="form-control"
+                                        name="GetInTouchCountry[phone]" aria-required="true" placeholder="Phone*" required>
+                        
+                      </div>
+                          
+                      <button type="submit">Get In Touch</button>
+
+                  </div>
+              <?php ActiveForm::end(); ?>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+    <div class="bg-video-wrap-lp">
+      <img src="images/usa-landing-page-banner.jpg" alt="banner-img" class="desktop-view-only w-100">
+      <img src="images/usa-landing-page-banner-mob.jpg" alt="banner-img" class="mob-view-only w-100">
+      <div class="landing-page-banner-overlay"></div>
+    </div>
+  </section>
+
 
 <div class="landing-page-main-section">
 

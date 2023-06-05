@@ -1,17 +1,45 @@
-<?php
-  use yii\helpers\Html;
-  use yii\bootstrap\ActiveForm;
-    $this->title = " Study In Itlay - Top Universities,Benefits,Eligibility Criteria,Scholorships,Colleges,Fees,Intakes, Admissions,Requirements , With Ilets  Without Ilets ,Popular Courses , Study Visa  - University Bureau";
-    $this->registerMetaTag(['name' => 'description', 'content' =>  "Do you want to Study in Itlay ?  Get  counselling from our Itlay Study Abroad consultant who will guide you : Why study in Itlay, Choose top universities in Itlay including information related to eligibility criteria, admission procedure popular courses and many more...Benefits of study in Itlay"]);
-    // $this->registerMetaTag(['name' => 'keywords', 'content' =>  "Study In Itlay"]);
 
-?>
-<!-------------------------------------------------------- landing page ----------------------------------------------------------------------------------------- -->
- 
-<section class="banner-menu mob-inner-height">
-    <div class="bg-video-wrap">
-      <img src="images/Itlay-landing-page-banner.jpg" alt="banner-img" class="desktop-view-only w-100">
-      <img src="images/Itlay-landing-page-banner.jpg" alt="banner-img" class="mob-view-only w-100">
+  <section class="banner-menu mob-inner-height lp-banner-height">
+    <div class="row lead-form-main">
+      <div class="col-md-6 p-0"></div>
+      <div class="col-md-6 p-0">
+        <div class="lead-form-body">
+          <div class="col-md-12 header-section_form">
+               <?php $form = ActiveForm::begin([
+                'action' => ['studycanadashortform'],
+                'method' => 'post',
+                ]); ?>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <i class="fas fa-user-tie"></i>
+                          <input type="text" id="name" class="form-control"
+                                        name="GetInTouchCountry[name]" placeholder="Name*" aria-required="true" required>
+                      </div>
+                      <div class="col-md-12">
+                          <i class="fa fa-envelope"></i>
+                          
+                          <input type="email" id="email" class="form-control"
+                                        name="GetInTouchCountry[email]" aria-required="true" placeholder="Email*" required>
+                      </div>
+                      <div class="col-md-12">
+                          <i class="fa fa-phone-alt"></i>
+                          <input type="hidden" value="Itlay" name="GetInTouchCountry[study_country]">
+                          <input type="text" id="appliedcouncilstudent-phone" class="form-control"
+                                        name="GetInTouchCountry[phone]" aria-required="true" placeholder="Phone*" required>
+                        
+                      </div>
+                          
+                      <button type="submit">Get In Touch</button>
+
+                  </div>
+              <?php ActiveForm::end(); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-video-wrap-lp">
+      <img src="images/itlay-landing-page-banner.jpg" alt="banner-img" class="desktop-view-only w-100">
+      <img src="images/itlay-landing-page-banner-mob.jpg" alt="banner-img" class="mob-view-only w-100">
       <div class="landing-page-banner-overlay"></div>
     </div>
   </section>
@@ -20,7 +48,7 @@
   <div class="landing-page-main-section">
   
     <section class="landing-page-apply-sticky">
-      <a href="" data-bs-toggle="modal" data-bs-target="#apply_now"><img id="landing-page-apply-sticky-img" src="images/Apply-now-gif.gif"></a>
+      <a href=""><img id="landing-page-apply-sticky-img" src="images/Apply-now-gif.gif"></a>
     </section>
     <!-- it -->
     <section class="landing-page_decription mt-5 mb-5">
@@ -76,7 +104,7 @@
                     <br>
                     International students have long flocked to Italy, with tens of thousands coming each year to study at prestigious institutions including Fondazione Alma Mater, Rome Business School, Free University of Bozen Bolzan, University of Parma, University of Trieste, and the University of Siena.
                     <br>
-                    Italy surpassed Spain, France, Itlay, Ireland, China, Australia, Costa Rica, and Japan to take second place after the UK on a list of American students' best study abroad locations. More than 10% of US students who studied abroad chose Italy as their destination. 
+                    Italy surpassed Spain, France, Germany, Ireland, China, Australia, Costa Rica, and Japan to take second place after the UK on a list of American students' best study abroad locations. More than 10% of US students who studied abroad chose Italy as their destination. 
                   </p>
                 </li>
                 <li class="pb-3">
@@ -162,16 +190,16 @@
             <div class="lpage-benefits-heading-container">
               <h2 class="lpage-benefits-heading-curve">Here are some benefits of studying in the</h2>
               <div class="lpage-benefits-country">
-                <div class="lpage-benefits-flag"><img src="images/far-flag-icon.png"></div>
+                <div class="lpage-benefits-flag"><img src="images/itl-flag-icon.png"></div>
                 <h2>Itlay</h2>
-                <div class="lpage-benefits-flag"><img src="images/far-flag-icon.png"></div>
+                <div class="lpage-benefits-flag"><img src="images/itl-flag-icon.png"></div>
               </div>
             </div>
   
             <div class="row">
               <div class="col-md-12 lpage-benefits-inner-container">
                 <h2 class="lpage-benefits-heading text-center"><span>top-notch public colleges</span> in Italy</h2>
-                <img src="images/far-benefits-img-1.png">
+                <img src="images/itl-benefits-img-1.png">
                 <p class="lpage-benefits-small-text text-start">
                   Plenty of top universities with unique international environment's high level of multiculturalism is one reason why it is a popular destination for international students, but the nation also has a number of outstanding public and private colleges.
                   <br>
@@ -192,7 +220,7 @@
               </div>
               <div class="col-md-6 lpage-benefits-inner-container">
                 <h2 class="lpage-benefits-heading text-center">Italy is an <span>affordable destination</span> for international students</h2>
-                <img src="images/far-benefits-img-2.png">
+                <img src="images/itl-benefits-img-2.png">
                 <p class="lpage-benefits-small-text">
                   In terms of both tuition fees and living expenses, Italy is one of the most cheap nations in Europe to study abroad.
                   <br>
@@ -207,7 +235,7 @@
               </div>
               <div class="col-md-6 lpage-benefits-inner-container">
                 <h2 class="lpage-benefits-heading text-center">Easy ways to <span>travel the country</span></h2>
-                <img src="images/far-benefits-img-3.png">
+                <img src="images/itl-benefits-img-3.png">
                 <p class="lpage-benefits-small-text">
                   For a few euros, you can 'jump' a bus or train in Italy and go to some of the most stunning beaches in the world, far away from the bustling Bologna or the chilly and foggy Milan.
                   <br>
@@ -216,7 +244,7 @@
               </div>
               <div class="col-md-6 lpage-benefits-inner-container">
                 <h2 class="lpage-benefits-heading text-center"><span>No pineapple</span> on your pizza!</h2>
-                <img src="images/far-benefits-img-5.png">
+                <img src="images/itl-benefits-img-4.png">
                 <p class="lpage-benefits-small-text">
                   Italians are known for their pizza; while it is available worldwide, "the real pizza" can only be found in Italy. You'll have to taste it to believe it is special; I doubt anyone has ever identified the hidden ingredient. Because Italian pizza is also more sophisticated, don't anticipate seeing a tonne of toppings on it or even finding pineapple!
                   <br>
@@ -225,7 +253,7 @@
               </div>
               <div class="col-md-6 lpage-benefits-inner-container">
                 <h2 class="lpage-benefits-heading text-center"><span>Late nights </span>are a given in Italy</h2>
-                <img src="images/far-benefits-img-6.png">
+                <img src="images/itl-benefits-img-5.png">
                 <p class="lpage-benefits-small-text">
                   Life in Italy begins and concludes later in the evening compared to other southern European nations. The streets are bustling with activity around 8 o'clock, and maybe this is the hour when life just gets going. Several other European towns appear to have abruptly turned their lights at six o'clock in the evening. No people were around, and the atmosphere was seriously depressing us. Italy will most certainly prevent this from happening!
                   <br>
@@ -234,7 +262,7 @@
               </div>
               <div class="col-md-12 lpage-benefits-inner-container">
                 <h2 class="lpage-benefits-heading text-center">So many <span>English-taught degrees</span> that you won't know what to choose</h2>
-                <img src="images/far-benefits-img-7.png">
+                <img src="images/itl-benefits-img-6.png">
                 <p class="lpage-benefits-small-text">
                   From the arts to computer science, you may choose an appropriate study program in Italy, many of which are taught in English. See which English-taught study programs are the most well-liked. Depending on the university you choose, you might want to think about the following options:
                   <br>
@@ -259,7 +287,7 @@
               </div>
               <div class="col-md-6 lpage-benefits-inner-container">
                 <h2 class="lpage-benefits-heading text-center">A country full of <span>wonders</span></h2>
-                <img src="images/far-benefits-img-4.png">
+                <img src="images/itl-benefits-img-7.png">
                 <p class="lpage-benefits-small-text">
                   It would be a pity to pass up the chance to live close to multiple UNESCO World Heritage Sites while using your foreign student status in Italy. Italy outperforms all other nations in this regard, with 51 heritage sites reflecting the nation's rich cultural and historical legacy.
                   <br>
@@ -267,8 +295,8 @@
                 </p>
               </div>
               <div class="col-md-6 lpage-benefits-inner-container">
-                <h2 class="lpage-benefits-heading text-center"><span>Surrounded by arts, architecture, and fashion.</span></h2>
-                <img src="images/far-benefits-img-8.png">
+                <h2 class="lpage-benefits-heading text-center">Surrounded by <span>arts, architecture, and fashion.</span></h2>
+                <img src="images/itl-benefits-img-8.png">
                 <p class="lpage-benefits-small-text">
                   Particularly those who selected Italy to pursue degrees in the arts, architecture, or fashion won't ever look back on their choice. These iconic aspects of Italian culture will undoubtedly appeal to you, regardless of what you were there to study.
                   <br>
@@ -289,7 +317,7 @@
             <div class="row lpage-apply-banner">
               <div class="col-md-5 lpage-apply-banner-bot"></div>
               <div class="col-md-2 p-0">
-                <img style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#apply_now" class="w-100" src="images/apply-now-banner-btn.gif">
+                <img class="w-100" src="images/apply-now-banner-btn.gif">
               </div>
               <div class="col-md-5 lpage-apply-banner-top"></div>
             </div>
@@ -297,7 +325,7 @@
         </div>
       </div>
       <div class="container-fluid">
-        <img data-bs-toggle="modal" data-bs-target="#apply_now"  class="w-100 h-100" src="images/counselling-img.jpg">
+        <img class="w-100 h-100" src="images/counselling-img.jpg">
       </div>
       <div class="container">
         <div class="row">
@@ -321,7 +349,7 @@
             <h2 class="lpage-how-study-heading">How To Study In <span>Itlay</span></h2>
             <p>Italy is a wonderful country, and you may travel and study there as an international student. Italy is a great place to study since it is home to one of the oldest institutions in the world, the University of Bologna, which also founded the modern university system.</p>
   
-            <img src="images/far-how-to-study-img.png">
+            <img src="images/itl-how-to-study-img.png">
   
             <h2 class="lpage-how-study-heading">Italian universities to consider for your studies</span></h2>
             <p class="text-start">
@@ -446,7 +474,7 @@
   
             <img class="w-100" src="images/study-abroad-flags.png">
   
-            <button class="lpage-how-study-apply-btn" data-bs-toggle="modal" data-bs-target="#apply_now">Apply Now</button>
+            <button class="lpage-how-study-apply-btn">Apply Now</button>
   
           </div>
         </div>
@@ -464,7 +492,7 @@
             </p>
           </div>
           <div class="col-md-5 lpage-requirements-img-box">
-            <img class="w-100" src="images/far-requirements-img.png">
+            <img class="w-100" src="images/itl-requirements-img.png">
           </div>
           <div class="col-md-12 mt-5">
             <h3><b>(Master's) second cycle studies</b></h3>
@@ -518,43 +546,43 @@
           <div class="col-md-12 lpage-top-universities-slider">
             <div class="row">
               <div class="3-col-items">
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-1.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-1.png">
                   <h4>University of Bologna</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-2.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-2.png">
                   <h4>Sapienza University of Rome</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-3.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-3.png">
                   <h4>Scuola Normale Superiore di Pisa</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-4.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-4.png">
                   <h4>University of Padua</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-5.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-5.png">
                   <h4>Sant'Anna School of Advanced Studies - Pisa</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-6.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-6.png">
                   <h4>Vita-Salute San Raffaele University</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-7.jpg">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-7.jpg">
                   <h4>University of Milan</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-8.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-8.png">
                   <h4>University of Milan Bicocca</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-9.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-9.png">
                   <h4>University of Rome II - Tor Vergata</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-9.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-10.png">
                   <h4>University of Brescia</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-9.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-11.png">
                   <h4>University of Pavia</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-9.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-12.png">
                   <h4>Politecnico di Milano</h4>
                 </div>
-                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/far-top-university-img-9.png">
+                <div class="col-md-4"><img class="w-100 p-2 h-100" src="images/itl-top-university-img-13  .png">
                   <h4>University of Trento</h4>
                 </div>
               </div>
@@ -572,7 +600,7 @@
             <p class="lpage-popular-intakes-text">
               Italian colleges provide admission in two intakes. Students can select the intake based on the application period, the desired degree, and the available seats at their selected college or university.
             </p>
-            <img src="images/far-popular-intakes-img.jpg">
+            <img src="images/itl-popular-intakes-img.jpg">
             <div class="text-start">
               <p class="lpage-popular-intakes-text">September Intake:</p>
               <ul style="font-size: 20px; padding-left: 3rem;">
@@ -595,7 +623,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 lpage-cost-living-container">
-            <img src="images/far-cost-living-img.jpg">
+            <img src="images/itl-cost-living-img.jpg">
             <div class="lpage-cost-living-heading-box">
               <h2 class="lpage-cost-living-heading">Cost of studying and living in <span>Itlay</span></h2>
               <p class="lpage-cost-living-text">
@@ -736,7 +764,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   University of Bologna
-                  <img src="images/far-top-university-table-img-1.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-1.png" style="width:280px;">
                 </td>
                 <td>1</td>
                 <td>172</td>
@@ -745,7 +773,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   Sapienza University of Rome
-                  <img src="images/far-top-university-table-img-2.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-2.png" style="width:280px;">
                 </td>
                 <td>2</td>
                 <td>197</td>
@@ -754,7 +782,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   Scuola Normale Superiore di Pisa
-                  <img src="images/far-top-university-table-img-3.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-3.png" style="width:280px;">
                 </td>
                 <td>2</td>
                 <td>197</td>
@@ -763,7 +791,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   University of Padua
-                  <img src="images/far-top-university-table-img-4.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-4.png" style="width:280px;">
                 </td>
                 <td>4</td>
                 <td>201-250</td>
@@ -772,7 +800,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   Sant'Anna School of Advanced Studies - Pisa
-                  <img src="images/far-top-university-table-img-5.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-5.jpg" style="width:280px;">
                 </td>
                 <td>4</td>
                 <td>201-250</td>
@@ -781,7 +809,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   Vita-Salute San Raffaele University
-                  <img src="images/far-top-university-table-img-6.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-6.png" style="width:280px;">
                 </td>
                 <td>4</td>
                 <td>201-250</td>
@@ -790,7 +818,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   University of Milan
-                  <img src="images/far-top-university-table-img-7.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-7.png" style="width:280px;">
                 </td>
                 <td>7</td>
                 <td>301-350</td>
@@ -799,7 +827,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   University of Milan Bicocca
-                  <img src="images/far-top-university-table-img-8.jpg" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-8.png" style="width:280px;">
                 </td>
                 <td>7</td>
                 <td>301-350</td>
@@ -808,7 +836,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   University of Rome II - Tor Vergata
-                  <img src="images/far-top-university-table-img-9.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-9.png" style="width:280px;">
                 </td>
                 <td>7</td>
                 <td>301-350</td>
@@ -817,7 +845,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   University of Brescia
-                  <img src="images/far-top-university-table-img-9.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-10.png" style="width:280px;">
                 </td>
                 <td>10</td>
                 <td>351-400</td>
@@ -826,7 +854,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   University of Pavia
-                  <img src="images/far-top-university-table-img-9.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-11.png" style="width:280px;">
                 </td>
                 <td>10</td>
                 <td>351-400</td>
@@ -835,7 +863,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   Politecnico di Milano
-                  <img src="images/far-top-university-table-img-9.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-12.png" style="width:280px;">
                 </td>
                 <td>10</td>
                 <td>351-400</td>
@@ -844,7 +872,7 @@
                 <td class="lpage-topuniversities-table-title"
                   style="display:flex;flex-direction:column;align-items:center;">
                   University of Trento
-                  <img src="images/far-top-university-table-img-9.png" style="width:280px;">
+                  <img src="images/itl-top-university-table-img-13.png" style="width:280px;">
                 </td>
                 <td>10</td>
                 <td>351-400</td>
@@ -863,37 +891,37 @@
             <h4 class="lpage-affordable-heading text-center">Universities offering Bachelor's degrees</h4>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-1.png">
+            <img src="images/itl-affordable-img-1.png">
             <h2>1. University of Pisa</h2>
           </div>
   
           <div class="col-md-4">
-            <img src="images/far-affordable-img-2.png">
+            <img src="images/itl-affordable-img-2.png">
             <h2>2. Free University of Bozen-Bolzano</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-3.png">
+            <img src="images/itl-affordable-img-3.png">
             <h2>3. Ca' Foscari University of Venice</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-4.png">
+            <img src="images/itl-affordable-img-4.png">
             <h2>4. International Telematic University UNINETTUNO</h2>
           </div>
   
           <div class="col-md-4">
-            <img src="images/far-affordable-img-5.png">
+            <img src="images/itl-affordable-img-5.png">
             <h2>5. University of Padua</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-6.jpg">
+            <img src="images/itl-affordable-img-6.png">
             <h2>6. Sapienza University of Rome</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-7.png">
+            <img src="images/itl-affordable-img-7.png">
             <h2>7. Università Cattolica del Sacro Cuore</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-8.png">
+            <img src="images/itl-affordable-img-8.png">
             <h2>8. University of Pavia</h2>
           </div>
   
@@ -902,43 +930,43 @@
           </div>
   
           <div class="col-md-4">
-            <img src="images/far-affordable-img-9.png">
+            <img src="images/itl-affordable-img-9.png">
             <h2>1. University of Genoa</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-10.png">
+            <img src="images/itl-affordable-img-10.png">
             <h2>2. University of Pisa</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-11.png">
+            <img src="images/itl-affordable-img-11.png">
             <h2>3. University of Bergamo</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-12.png">
+            <img src="images/itl-affordable-img-12.png">
             <h2>4. University of Naples Federico II</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-13.png">
+            <img src="images/itl-affordable-img-13.png">
             <h2>5. University of Modena and Reggio Emilia - UNIMORE</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-14.png">
+            <img src="images/itl-affordable-img-14.png">
             <h2>6. University of Salerno</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-15.png">
+            <img src="images/itl-affordable-img-15.png">
             <h2>7. University of Cassino and Southern Lazio</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-16.png">
+            <img src="images/itl-affordable-img-16.jpg">
             <h2>8. Politecnico di Torino</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-17.png">
+            <img src="images/itl-affordable-img-17.png">
             <h2>9. University of Perugia</h2>
           </div>
           <div class="col-md-4">
-            <img src="images/far-affordable-img-18.png">
+            <img src="images/itl-affordable-img-18.png">
             <h2>10. University of Pavia</h2>
           </div>
   
@@ -962,27 +990,27 @@
   
           <div class="col-md-6 lpage-course-img-container text-center">
             <h4><b> 1. Management / MBA in Itlay:</b></h2>
-            <img style="width: 50%" src="images/far-course-img-1.png">
+            <img style="width: 50%" src="images/itl-course-img-1.png">
           </div>
           <div class="col-md-6 lpage-course-img-container text-center">
             <h4><b> 2. Masters in Area & Cultural Studies in Italy</b></h2>
-            <img style="width: 50%" src="images/far-course-img-1.png">
+            <img style="width: 50%" src="images/itl-course-img-2.png">
           </div>
           <div class="col-md-6 lpage-course-img-container text-center">
             <h4><b> 3. Masters in Architecture in Italy</b></h2>
-            <img style="width: 50%" src="images/far-course-img-1.png">
+            <img style="width: 50%" src="images/itl-course-img-3.png">
           </div>
           <div class="col-md-6 lpage-course-img-container text-center">
             <h4><b> 4. Masters in International Relations in Italy</b></h2>
-            <img style="width: 50%" src="images/far-course-img-1.png">
+            <img style="width: 50%" src="images/itl-course-img-4.png">
           </div>
           <div class="col-md-6 lpage-course-img-container text-center">
             <h4><b> 5. Masters in Fashion Design in Italy</b></h2>
-            <img style="width: 50%" src="images/far-course-img-1.png">
+            <img style="width: 50%" src="images/itl-course-img-5.png">
           </div>
           <div class="col-md-6 lpage-course-img-container text-center">
             <h4><b> 6. Masters in Business Administration in Italy</b></h2>
-            <img style="width: 50%" src="images/far-course-img-1.png">
+            <img style="width: 50%" src="images/itl-course-img-6.png">
           </div>
         </div>
       </div>
@@ -1264,172 +1292,11 @@
         <div class="row">
           <div class="col-md-12 lpage-our-counsellor-container">
             <h2 class="lpage-our-counsellor-heading">Speak to our counsellor</h2>
-            <button class="lpage-our-counsellor-button" data-bs-toggle="modal" data-bs-target="#apply_now">Get Expert Counselling</button>
+            <button class="lpage-our-counsellor-button">Get Expert Counselling</button>
           </div>
         </div>
       </div>
     </section>
   </div>
-  
-  <!-- apply now Modal -->
-<div class="modal fade" id="apply_now" tabindex="-1" aria-labelledby="apply_nowLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content p-4">
-
-      <div class="col-12 ask-question-form">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="modal-header justify-content-end p-0">
-                        <button type="button" class="close common-btn-close"
-                            data-bs-dismiss="modal" aria-label="Close">×</button>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="avtar">
-                                <img src="images/apple-touch-icon.png">
-                            </div>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="avtar-title">
-                                <h4 class="common-heading">University Bureau</h4>
-                                <p> <b>Get Expert Counselling</b></p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <?php $form = ActiveForm::begin([
-                // 'action' => ['index'],
-                'method' => 'post',
-                ]); ?>
-
-                    <div class="col-md-12 mt-3">
-
-                        <div class="row">
-
-                            <div class="col-xs-12 col-sm-6">
-
-                                <div class="form-group field-appliedcouncilstudent-name required">
-                                    <label class="control-label" for="appliedcouncilstudent-name">Name</label>
-                                    <input type="text" id="appliedcouncilstudent-name" class="form-control"
-                                        name="AppliedCouncilStudent[name]" aria-required="true" required>
-
-                                    <p class="help-block help-block-error"></p>
-                                </div>
-
-                            </div>
-
-                            <div class="col-xs-12 col-sm-6">
-
-                                <div class="form-group field-appliedcouncilstudent-email required">
-                                    <label class="control-label" for="appliedcouncilstudent-email">Email</label>
-                                    <input type="text" id="appliedcouncilstudent-email" class="form-control"
-                                        name="AppliedCouncilStudent[email]" aria-required="true" required>
-
-                                    <p class="help-block help-block-error"></p>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6">
-
-                                <div class="form-group field-appliedcouncilstudent-phone required">
-                                    <label class="control-label" for="appliedcouncilstudent-phone">Phone</label>
-                                    <input type="text" id="appliedcouncilstudent-phone" class="form-control"
-                                        name="AppliedCouncilStudent[phone]" aria-required="true" required>
-
-                                    <p class="help-block help-block-error"></p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6">
-
-                                <div class="form-group field-appliedcouncilstudent-city required">
-                                    <label class="control-label" for="appliedcouncilstudent-city">City</label>
-                                    <input type="text" id="appliedcouncilstudent-city" class="form-control"
-                                        name="AppliedCouncilStudent[city]" aria-required="true" required>
-
-                                    <p class="help-block help-block-error"></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6">
-
-                                <div class="form-group field-appliedcouncilstudent-state required">
-                                    <label class="control-label" for="appliedcouncilstudent-state">State</label>
-                                    <input type="text" id="appliedcouncilstudent-state" class="form-control"
-                                        name="AppliedCouncilStudent[state]" aria-required="true" required>
-
-                                    <p class="help-block help-block-error"></p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6">
-
-                                <div class="form-group field-appliedcouncilstudent-zip_code required">
-                                    <label class="control-label" for="appliedcouncilstudent-zip_code">Zip Code</label>
-                                    <input type="text" id="appliedcouncilstudent-zip_code" class="form-control"
-                                        name="AppliedCouncilStudent[zip_code]" aria-required="true" required>
-
-                                    <p class="help-block help-block-error"></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6">
-
-                            </div>
-
-                            <div class="col-xs-12 col-sm-6">
-
-                                <div class="form-group field-appliedcouncilstudent-college_id required">
-
-                                    <input type="hidden" id="appliedcouncilstudent-college_id" class="form-control"
-                                        name="AppliedCouncilStudent[college_id]" value="1">
-
-                                    <p class="help-block help-block-error"></p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 mt-3">
-
-                                <div class="form-group field-appliedcouncilstudent-additional_message required">
-                                    <label class="control-label"
-                                        for="appliedcouncilstudent-additional_message">Additional Message</label>
-                                    <input type="text" id="appliedcouncilstudent-additional_message"
-                                        class="form-control" name="AppliedCouncilStudent[additional_message]"
-                                        aria-required="true" required>
-
-                                    <p class="help-block help-block-error"></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <br>
-
-                    </div>
-
-                    <button type="submit" class="common-btn w-100 btn-success">Submit</button>
-
-                    <?php ActiveForm::end(); ?>
-            </div>
-
-
-        </div>
-      </div>
-    
-    </div>
-  </div>
-</div>
   
   <a id="lpage-back-to-top"><i class="fas fa-angle-up"></i></a>

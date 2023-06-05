@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use common\models\User;
 use frontend\models\ForStudents;
+use frontend\models\SmsOtp;
 
 /**
  * Signup form
@@ -67,6 +68,8 @@ class SignupForm extends Model
         if (!$this->validate()) {
             return null;
         }
+
+        $sms = new SmsOtp();
         
         $user = new User();
         $student= new ForStudents();
@@ -85,9 +88,13 @@ class SignupForm extends Model
         $student->first_name = $this->first_name;
         $student->last_name = $this->last_name;
         $student->phone_no = $this->mobile;
+
+        /* send otp for verification */
+        $userModel = new User();
+        //$userModel->sendOtp($student->phone_no, User::USER_TYPE_STUDENT, $user->id);      
         
         if($student->save(false)){
-            $notification=new \common\models\Notification();
+             $notification=new \common\models\Notification();
             $notification->created_by='New Student';
             $notification->created_at=date('Y-m-d');
             $notification->module='Student Register';

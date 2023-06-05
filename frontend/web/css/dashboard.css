@@ -74,6 +74,7 @@
 body {
     font-family: 'montserratregular', 'arial';
     font-weight: normal;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -113,7 +114,7 @@ p {
     height: 100%;
 }
 .sidebar-nav {
-    margin-top: 30px;
+    margin-top: 20px;
     display: block;
 }
 
@@ -366,7 +367,8 @@ main .card {
 }
 .account-manager{
     border-radius: 50%;
-    width: 100px;
+    width: 90px;
+    height: 85px;
 }
 .account-manager-name{
     font-family: 'montserratsemibold';
@@ -466,7 +468,7 @@ main .card {
     margin: 0;
     color: #575757;
     border-bottom: 1px dashed #ccc;
-    padding: 7px 0;
+    padding: 9px 0;
 }
 .common-list li:last-child{
     border-bottom: 1px dashed transparent;
@@ -1462,6 +1464,9 @@ main .card {
         color: #f0393a;
         width: 100%;
     }
+    .left-sidebar-footer{
+        position: relative !important;
+    }
 }
 .mou-container_inner{
     margin-top: 1rem;
@@ -1469,3 +1474,22 @@ main .card {
 .mou-container_main{
     height: 100%
 }
+.side-icon .nav-item a{
+    padding-left: 20px;
+    position: relative;
+}
+.side-icon .nav-item a i{
+    position: absolute;
+    top: 6px;
+    left: 5px;
+}
+.normal-text{
+    text-decoration: none;
+    color: #495561;
+    font-weight: 500;
+    cursor: pointer;
+}
+.normal-text:hover{
+    color: #f0393a;
+}
+
