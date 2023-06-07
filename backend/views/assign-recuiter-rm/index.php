@@ -31,22 +31,40 @@ $recruiterArray = ArrayHelper::map(\common\models\Recruiters::find()->all(),'id'
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            [
-                'format' => 'html',
-                'label'=>'Unique ID',
-                'attribute' => 'recruiter_id',
-                'value' => function($model){
-                 return $model->recruiter_id;      
-                }
-            ],
+            'id',
             [
                 'format' => 'html',
                 'attribute' => 'recruiter_id',
-                'filter'=>Html::activeDropDownList ($searchModel,'recruiter_id',$recruiterArray,['prompt' => 'Select '.Yii::t('app','Recruiter'),'class' => 'form-control']),
+                'filter'=>Html::activeDropDownList ($searchModel,'recruiter_id',$recruiterArray,['prompt' => 'Select '.Yii::t('app','Recruiter'),'data-plugin'=>'select2','class' => 'form-control']),
                 'value' => function($model){
                     $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
                        if($Recruiters){
                         return $Recruiters->owner_first_name.' '.$Recruiters->owner_last_name;
+                       }else{
+                        return "N/A";
+                       }
+                }
+            ],
+
+            [
+                'format' => 'html',
+                'label' => 'Recruiter Email',
+                'value' => function($model){
+                    $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
+                       if($Recruiters){
+                        return $Recruiters->email;
+                       }else{
+                        return "N/A";
+                       }
+                }
+            ],
+            [
+                'format' => 'html',
+                'label' => 'Recruiter Phone',
+                'value' => function($model){
+                    $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
+                       if($Recruiters){
+                        return $Recruiters->phone;
                        }else{
                         return "N/A";
                        }
@@ -65,11 +83,12 @@ $recruiterArray = ArrayHelper::map(\common\models\Recruiters::find()->all(),'id'
                        }
                 }
             ],
+
             [
                 'format' => 'html',
-                'label' => 'Date',
+                'attribute' => 'date_created',
                 'value' => function($model){
-                       return date('d-M-Y H:i:s',strtotime($model->date_created));
+                       return date('d M Y',strtotime($model->date_created));
                 }
             ],
             [

@@ -47,6 +47,30 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'format' => 'html',
+                'label' => 'Recruiter Email',
+                'value' => function($model){
+                    $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
+                       if($Recruiters){
+                        return $Recruiters->email;
+                       }else{
+                        return "N/A";
+                       }
+                }
+            ],
+            [
+                'format' => 'html',
+                'label' => 'Recruiter Phone',
+                'value' => function($model){
+                    $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
+                       if($Recruiters){
+                        return $Recruiters->phone;
+                       }else{
+                        return "N/A";
+                       }
+                }
+            ],
+            [
+                'format' => 'html',
                 'attribute' => 'rm_id',
                 'value' => function($model){
                        $User=\common\models\User::findOne($model->rm_id);
@@ -58,7 +82,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             // 'user_id',
-            'date_created',
+            [
+                'format' => 'html',
+                'attribute' => 'date_created',
+                'value' => function($model){
+                       return date('d M Y',strtotime($model->date_created));
+                }
+            ],
         ],
     ]) ?>
 
