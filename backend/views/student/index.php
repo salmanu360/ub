@@ -18,7 +18,7 @@ if (isset($actionColumnTemplates)) {
     $actionColumnTemplateString = $actionColumnTemplate;
 } else {
     Yii::$app->view->params['pageButtons'] = Html::a('<span class="glyphicon glyphicon-plus"></span> ' . 'New', ['create'], ['class' => 'btn btn-success']);
-    $actionColumnTemplateString = "{view} {update} {delete} "; //{applications}
+    $actionColumnTemplateString = "{view} {update} {delete} {eligible} {noteligible} "; //{applications}
 }
 $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTemplateString.'</div>';
 ?>
@@ -308,6 +308,17 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
                         ]);
                     //}
                     },
+
+                    'eligible' => function ($url, $model, $key) {
+                        return '<button type="button" data-id="'.$model->ID.'" class="btn btn-info btn-sm popupeligible">Eligible</button>';
+                        
+                    },
+                    'noteligible' => function ($url, $model, $key) {
+                        return '<button type="button" data-id="'.$model->ID.'" class="btn btn-danger btn-sm popupnoteligible">Not Eligible</button>';
+                        
+                    },
+
+
                     'delete' => function ($url, $model,$key) {
                         //if (Yii::$app->user->can('delete-allstudent')) {
                         return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
@@ -342,5 +353,72 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
 
 
 <?php \yii\widgets\Pjax::end() ?>
+<!-- not eligible modal -->
+<div class="modal fade" id="noteligiblemodal" style="text-align: left;">
+<div class="modal-dialog">
+<form method="post" action="">
+        <div class="modal-content">
+            <div class="modal-body">
+            <div class="form-group">
+              <label for="">Not Eligible Comment</label>
+              <textarea class="form-control" name="notes" id="" rows="3"></textarea>
+              <input type="hidden" value="" name="recruiter_id" class="recruiter_id_fetch">
+            </div>
+                </div> <!-- row end !-->
+                <div class="modal-footer">
+                <input style="margin-right: 10px;" type="submit" name="bulkdeletesubmit"  class="btn btn-success" />
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div> 
 
+            </div>
 
+        </div>
+        </form>
+    </div> 
+</div> 
+<!--  -->
+<!-- eligible model -->
+<div class="modal fade" id="eligiblemodal" style="text-align: left;">
+<div class="modal-dialog">
+<form method="post" action="">
+        <div class="modal-content">
+            <div class="modal-body">
+            <div class="form-group">
+              <label for="">Eligible Comment</label>
+              <textarea class="form-control" name="notes" id="" rows="3"></textarea>
+              <input type="hidden" value="" name="recruiter_id" class="recruiter_id_fetch">
+            </div>
+                </div> <!-- row end !-->
+                <div class="modal-footer">
+                <input style="margin-right: 10px;" type="submit" name="bulkdeletesubmit"  class="btn btn-success" />
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div> 
+
+            </div>
+
+        </div>
+        </form>
+    </div> 
+</div> 
+<!--  -->
+<?php
+    $this->registerJs(
+    '$("document").ready(function(){
+        $(".popupeligible").click(function(e) {
+            var id=$(this).attr("data-id");
+            // $(".recruiter_id_fetch").val(id);
+          e.preventDefault();
+          $("#eligiblemodal").modal("show");
+        });
+
+        $(".popupnoteligible").click(function(e) {
+            var id=$(this).attr("data-id");
+            // $(".recruiter_id_fetch").val(id);
+          e.preventDefault();
+          $("#noteligiblemodal").modal("show");
+        });
+
+        });
+        '
+    );
+  ?>    
