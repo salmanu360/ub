@@ -295,7 +295,7 @@ $this->title = 'Dashboard';
                     </div>
                     <div class="col-md-9 p-0">
                         <div class="account-manager-text">
-                            <label class="account-manager-name">Ankit Tiwari ( Relationship Manager )</label>
+                            <label class="account-manager-name">Ankit Tiwari ( Regional Manager )</label>
                             <a href="mail:tiwari.ankit@universitybureau.com" class="email-text">
                                 <i class="fas fa-envelope" aria-hidden="true"></i>
                                 <b>tiwari.ankit@universitybureau.com</b>
@@ -318,7 +318,7 @@ $this->title = 'Dashboard';
                     </div>
                     <div class="col-md-9 p-0">
                         <div class="account-manager-text">
-                            <label class="account-manager-name">Sourabh Singhal ( Relationship Manager )</label>
+                            <label class="account-manager-name">Sourabh Singhal ( Regional Manager )</label>
                             <a href="mail:singhal.sourabh@universitybureau.com" class="email-text">
                                 <i class="fas fa-envelope" aria-hidden="true"></i>
                                 <b>singhal.sourabh@universitybureau.com</b>

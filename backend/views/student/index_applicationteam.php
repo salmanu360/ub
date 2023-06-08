@@ -96,7 +96,48 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
 			'first_name',
 			'last_name',
 			'email_id',
+			[
+                'format' => 'html',
+                'attribute' => 'recruiter_id',
+                'value' => function($model){
+                    $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
+                       if($Recruiters){
+                        return $Recruiters->owner_first_name .' '.$Recruiters->owner_last_name;
+                       }else{
+                        return "N/A";
+                       }
+                }
+            ],
+            
             [
+                'format' => 'html',
+                'label' => 'Recruiter Email',
+                'value' => function($model){
+                    $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
+                       if($Recruiters){
+                        return $Recruiters->email;
+                       }else{
+                        return "N/A";
+                       }
+                }
+            ],
+           
+            
+            [
+                'format' => 'html',
+                'label' => 'Recruiter Phone',
+                'value' => function($model){
+                    $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
+                       if($Recruiters){
+                        return $Recruiters->phone;
+                       }else{
+                        return "N/A";
+                       }
+                }
+            ],
+            
+             'passport_no',
+			[
                 'format' => 'html',
                 'attribute' => 'assign_application_team',
                 'value' => function($model){
@@ -146,6 +187,15 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
                         }else{
                             return 'n/a';
                         }
+                }
+            ],
+            'comment',
+            [
+                'label' => 'RM Comment to Application',
+                'format' => 'html',
+                'value' => function($model){
+                    $url=Url::to(['rm-application-team-comment/rmcomment','id'=>$model->ID]);
+                    return '<a href="'.$url.'"  class="btn btn-sm btn-primary" title="Show All Comments">Show</a>';
                 }
             ],
 

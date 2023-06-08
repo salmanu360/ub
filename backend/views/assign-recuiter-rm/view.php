@@ -84,9 +84,9 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'user_id',
             [
                 'format' => 'html',
-                'attribute' => 'date_created',
+                'label' => 'Date',
                 'value' => function($model){
-                       return date('d M Y',strtotime($model->date_created));
+                       return date('d-M-Y H:i:s',strtotime($model->date_created));
                 }
             ],
         ],

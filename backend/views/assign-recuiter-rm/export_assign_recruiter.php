@@ -44,7 +44,37 @@ table, th, td {
                        }
                 }
             ],
-            'date_created',
+            [
+                'format' => 'html',
+                'label' => 'Recruiter Email',
+                'value' => function($model){
+                    $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
+                       if($Recruiters){
+                        return $Recruiters->email;
+                       }else{
+                        return "N/A";
+                       }
+                }
+            ],
+            [
+                'format' => 'html',
+                'label' => 'Recruiter Phone',
+                'value' => function($model){
+                    $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
+                       if($Recruiters){
+                        return $Recruiters->phone;
+                       }else{
+                        return "N/A";
+                       }
+                }
+            ],
+            [
+                'format' => 'html',
+                'label' => 'Date',
+                'value' => function($model){
+                       return date('d-M-Y H:i:s',strtotime($model->date_created));
+                }
+            ],
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, $model, $key, $index, $column) {

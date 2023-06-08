@@ -31,11 +31,18 @@ $recruiterArray = ArrayHelper::map(\common\models\Recruiters::find()->all(),'id'
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            [
+                'format' => 'html',
+                'label'=>'Unique ID',
+                'attribute' => 'recruiter_id',
+                'value' => function($model){
+                 return $model->recruiter_id;      
+                }
+            ],
             [
                 'format' => 'html',
                 'attribute' => 'recruiter_id',
-                'filter'=>Html::activeDropDownList ($searchModel,'recruiter_id',$recruiterArray,['prompt' => 'Select '.Yii::t('app','Recruiter'),'data-plugin'=>'select2','class' => 'form-control']),
+                'filter'=>Html::activeDropDownList ($searchModel,'recruiter_id',$recruiterArray,['prompt' => 'Select '.Yii::t('app','Recruiter'),'class' => 'form-control']),
                 'value' => function($model){
                     $Recruiters=\common\models\Recruiters::findOne($model->recruiter_id);
                        if($Recruiters){
@@ -45,7 +52,6 @@ $recruiterArray = ArrayHelper::map(\common\models\Recruiters::find()->all(),'id'
                        }
                 }
             ],
-
             [
                 'format' => 'html',
                 'label' => 'Recruiter Email',
@@ -83,12 +89,11 @@ $recruiterArray = ArrayHelper::map(\common\models\Recruiters::find()->all(),'id'
                        }
                 }
             ],
-
             [
                 'format' => 'html',
-                'attribute' => 'date_created',
+                'label' => 'Date',
                 'value' => function($model){
-                       return date('d M Y',strtotime($model->date_created));
+                       return date('d-M-Y H:i:s',strtotime($model->date_created));
                 }
             ],
             [
