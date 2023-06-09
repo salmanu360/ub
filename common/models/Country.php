@@ -110,6 +110,7 @@ class Country extends BaseCountry
             'Social Policy and Administration'=>'Social Policy and Administration',
             'Social Work'=>'Social Work',
             'Sociology'=>'Sociology',
+            'Social Science'=>'Social Science',
             'Sports Science'=>'Sports Science',
             'Supply Chain and Logistics'=>'Supply Chain and Logistics',
             'Politics'=>'Politics',

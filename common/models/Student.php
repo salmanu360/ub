@@ -396,4 +396,9 @@ class Student extends \yii\db\ActiveRecord
     {
         return $this->hasOne(\common\models\StudentSchoolAttended::className(), ['ID' => 'ID']);
     }
+
+    public function getStudentEligibleNoteligible()
+    {
+        return $this->hasOne(\common\models\StudentEligibleNoteligible::className(), ['student_id' => 'ID']);
+    }
 }

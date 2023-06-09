@@ -54,6 +54,16 @@ return $this->render('index', [
 ]);
 } */
 
+public function actionShowcomment()
+{
+    $id=$_POST['id'];
+    $recruiterNotes = \common\models\StudentEligibleNoteligible::find()->where(['student_id'=>$id])->all();
+    $view= $this->renderPartial('showeligible', [
+        'recruiterNotes' => $recruiterNotes,
+        ]);
+    return json_encode(['view'=>$view]);
+}
+
 public function actionViewstudentlist($id)
     {
         $model2=new \common\models\StudentPendingDocument;
@@ -183,7 +193,74 @@ public function actionStudentlist()
 
     public function actionIndex()
     {
-        
+        if(isset($_POST['comment'])){
+            $studentEligible=\common\models\StudentEligibleNoteligible::find()->where(['student_id'=>$_POST['student_id']])->One();
+            if($studentEligible){
+                $studentEligiblemodel=$studentEligible;
+            }else{
+                $studentEligiblemodel=new \common\models\StudentEligibleNoteligible();
+            }
+            $studentEligiblemodel->status=$_POST['status'];
+            $studentEligiblemodel->comment=$_POST['comment'];
+            $studentEligiblemodel->created_by=Yii::$app->user->id;
+            $studentEligiblemodel->student_id=$_POST['student_id'];
+            $studentEligiblemodel->save(false);
+            $studentmodel=Student::findOne($_POST['student_id']);
+            $Recruiters=\common\models\Recruiters::findOne($studentmodel->recruiter_id);
+            $notification=new \common\models\Notification();
+            $notification->module='Eligible/NotEligible';
+            $notification->status=0;
+            $notification->created_at=date('Y-m-d');
+            $notification->created_by='('.Yii::$app->user->identity->username.')';
+            $notification->name=$studentEligiblemodel->comment;
+            $notification->created_by_id=$studentEligiblemodel->id;
+            $notification->receiver_id=$studentmodel->recruiter_id;
+            $notification->save(false);
+            
+            $Recruitersemail=$Recruiters->email;
+            $mail = Yii::$app->mailer->compose()
+                    ->setFrom('noreply@universitybureau.com')
+                    ->setTo('salman.u360@gmail.com')
+                    //->setTo($Recruitersemail)
+                    ->setSubject('Student eligible and not eligible status changed')
+                    ->setHtmlBody('
+                    <p>Hello: '.$Recruiters->owner_first_name.' </p>
+                    <p>The below student status changed by '.Yii::$app->user->identity->username.'</p>
+                    <p>Student: '.$studentmodel->first_name.' '.$studentmodel->last_name .'</p>
+                    <p>Status: '.($studentEligiblemodel->status == 1)?'Eligible':'Not Eligible'.'</p>
+                    <p>Comment: '.$studentEligiblemodel->comment.'</p>
+                    <p>Date: '.date('d-M-Y H:i:s').'</p>
+                    ')
+                    ->send();
+            // email to concern student
+            $mail = Yii::$app->mailer->compose()
+            ->setFrom('noreply@universitybureau.com')
+            ->setTo($studentmodel->email_id)
+            ->setSubject('Your Eligible/Not eligible status changed')
+            ->setHtmlBody('
+            <p>Hello: </p>
+            <p>Your status changed by '.Yii::$app->user->identity->username.'</p>
+            <p>Student: '.$studentmodel->first_name.' '.$studentmodel->last_name .'</p>
+            <p>Status: '.($studentEligiblemodel->status == 1)?'Eligible':'Not Eligible'.'</p>
+            <p>Comment: '.$studentEligiblemodel->comment.'</p>
+            <p>Date: '.date('d-M-Y H:i:s').'</p>
+            ')
+            ->send();
+            // email to concern student end
+            $mail = Yii::$app->mailer->compose()
+            ->setFrom('noreply@universitybureau.com')
+            ->setTo('support@universitybureau.com')
+            ->setSubject('Student Eligible/Not eligible status changed')
+            ->setHtmlBody('
+            <p>Hello: </p>
+            <p>The below student status changed by '.Yii::$app->user->identity->username.'</p>
+            <p>Student: '.$studentmodel->first_name.' '.$studentmodel->last_name .'</p>
+            <p>Status: '.($studentEligiblemodel->status == 1)?'Eligible':'Not Eligible'.'</p>
+            <p>Comment: '.$studentEligiblemodel->comment.'</p>
+            <p>Date: '.date('d-M-Y H:i:s').'</p>
+            ')
+            ->send();
+        }
         $userid=Yii::$app->user->id;
         $type= Yii::$app->user->identity->type;
 

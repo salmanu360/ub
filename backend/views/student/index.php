@@ -18,7 +18,7 @@ if (isset($actionColumnTemplates)) {
     $actionColumnTemplateString = $actionColumnTemplate;
 } else {
     Yii::$app->view->params['pageButtons'] = Html::a('<span class="glyphicon glyphicon-plus"></span> ' . 'New', ['create'], ['class' => 'btn btn-success']);
-    $actionColumnTemplateString = "{view} {update} {delete} "; //{applications}
+    $actionColumnTemplateString = "{view} {update} {delete} {eligible} {noteligible} "; //{applications}
 }
 $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTemplateString.'</div>';
 ?>
@@ -228,6 +228,21 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
                        }
                 }
             ],
+            [
+                'label' => 'Eligible/Not Eligible',
+                'format'=> 'raw',
+                'value' => function($model){
+                    $studentEligible=\common\models\StudentEligibleNoteligible::find()->where(['student_id'=>$model->ID])->One();
+                    if($studentEligible && $studentEligible->status == 1){
+                        return '<a type="button" data-id="'.$model->ID.'" class="btn btn-success btn-sm shownotes" data-url="'.Url::to(["showcomment"]).'">Eligible</a>';
+                    }else if($studentEligible && $studentEligible->status == 0){
+                        return '<a type="button" data-id="'.$model->ID.'" class="btn btn-danger btn-sm shownotes" data-url="'.Url::to(["showcomment"]).'">Not Eligible</a>';
+                    }else{
+                        return "N/A";
+                    }
+                }
+    
+            ],
 			//'first_language',
 			/*'marital_status',*/
 			/*'passport_no',*/
@@ -308,6 +323,13 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
                         ]);
                     //}
                     },
+
+                    'eligible' => function ($url, $model, $key) {
+                        return '<button type="button" data-id="'.$model->ID.'" class="btn btn-info btn-sm popupeligible">Add Eligible / Not Eligible</button>';
+                        
+                    },
+
+
                     'delete' => function ($url, $model,$key) {
                         //if (Yii::$app->user->can('delete-allstudent')) {
                         return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, [
@@ -343,4 +365,94 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
 
 <?php \yii\widgets\Pjax::end() ?>
 
+<!-- eligible model -->
+<div class="modal fade" id="eligiblemodal" style="text-align: left;">
+<div class="modal-dialog">
+<form method="post" action="">
+        <div class="modal-content">
+            <div class="modal-body">
+            <div class="form-group">
+            <label for="">Select Eligible/Not Eligible</label>
+              <select name="status" id="" class="form-control">
+                <option value="1">Eligible</option>
+                <option value="0">Not Eligible</option>
+              </select>
+              <br>
+              <label for="">Eligible Comment <i class="fa fa-required"></i></label>
+              <textarea class="form-control" name="comment" id="" rows="3" required></textarea>
+              <input type="hidden" value="" name="student_id" class="student_id_fetch">
+            </div>
+                </div> <!-- row end !-->
+                <div class="modal-footer">
+                <input style="margin-right: 10px;" type="submit" name="bulkdeletesubmit"  class="btn btn-success" />
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div> 
 
+            </div>
+
+        </div>
+        </form>
+    </div> 
+</div> 
+<!--  -->
+
+<!--  -->
+<div class="modal fade" id="notesshowmodal" style="text-align: left;">
+<div class="modal-dialog">
+<form method="post" action="">
+        <div class="modal-content">
+            <div class="modal-body">
+            <div class="form-group allnotesvalues">
+              <label for="">Notes</label>
+              
+            </div>
+                </div> <!-- row end !-->
+                <div class="modal-footer">
+                <input style="margin-right: 10px;" type="submit" name="bulkdeletesubmit"  class="btn btn-success" />
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div> 
+
+            </div>
+
+        </div>
+        </form>
+    </div> 
+</div>
+    <!-- notes model end-->
+
+
+<?php
+    $this->registerJs(
+    '$("document").ready(function(){
+        $(".popupeligible").click(function(e) {
+            var id=$(this).attr("data-id");
+            $(".student_id_fetch").val(id);
+          e.preventDefault();
+          $("#eligiblemodal").modal("show");
+        });
+        });
+
+
+        $(document).on("click", ".shownotes", function(){
+            var url=$(this).data("url");
+                    userid = $(this).val();
+                    var id=$(this).attr("data-id");
+                        $.ajax({
+                            type: "POST",
+                            dataType:"JSON",
+                            url: url,
+                            data: {
+                                id: id,
+                            },
+                            success: function(data){
+                                $(".allnotesvalues").html(data.view);
+                                $("#notesshowmodal").modal("show");
+                            }
+                        });
+                });
+
+        '
+    );
+  ?>    
+
+  

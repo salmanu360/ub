@@ -198,6 +198,21 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
                     return '<a href="'.$url.'"  class="btn btn-sm btn-primary" title="Show All Comments">Show</a>';
                 }
             ],
+            [
+                'label' => 'Eligible/Not Eligible',
+                'format'=> 'raw',
+                'value' => function($model){
+                    $studentEligible=\common\models\StudentEligibleNoteligible::find()->where(['student_id'=>$model->ID])->One();
+                    if($studentEligible && $studentEligible->status == 1){
+                        return '<a type="button" data-id="'.$model->ID.'" class="btn btn-success btn-sm shownotes" data-url="'.Url::to(["showcomment"]).'">Eligible</a>';
+                    }else if($studentEligible && $studentEligible->status == 0){
+                        return '<a type="button" data-id="'.$model->ID.'" class="btn btn-danger btn-sm shownotes" data-url="'.Url::to(["showcomment"]).'">Not Eligible</a>';
+                    }else{
+                        return "N/A";
+                    }
+                }
+    
+            ],
 
             [
                 'format' => 'html',
@@ -261,5 +276,49 @@ $actionColumnTemplateString = '<div class="action-buttons">'.$actionColumnTempla
 
 
 <?php \yii\widgets\Pjax::end() ?>
+<!--  -->
+<div class="modal fade" id="notesshowmodal" style="text-align: left;">
+<div class="modal-dialog">
+<form method="post" action="">
+        <div class="modal-content">
+            <div class="modal-body">
+            <div class="form-group allnotesvalues">
+              <label for="">Notes</label>
+              
+            </div>
+                </div> <!-- row end !-->
+                <div class="modal-footer">
+                <input style="margin-right: 10px;" type="submit" name="bulkdeletesubmit"  class="btn btn-success" />
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div> 
 
+            </div>
 
+        </div>
+        </form>
+    </div> 
+</div>
+    <!-- notes model end-->
+<?php
+    $this->registerJs(
+    '$(document).on("click", ".shownotes", function(){
+            var url=$(this).data("url");
+                    userid = $(this).val();
+                    var id=$(this).attr("data-id");
+                        $.ajax({
+                            type: "POST",
+                            dataType:"JSON",
+                            url: url,
+                            data: {
+                                id: id,
+                            },
+                            success: function(data){
+                                $(".allnotesvalues").html(data.view);
+                                $("#notesshowmodal").modal("show");
+                            }
+                        });
+                });
+
+        '
+    );
+  ?> 

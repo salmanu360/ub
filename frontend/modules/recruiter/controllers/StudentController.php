@@ -743,6 +743,16 @@ class StudentController extends \frontend\modules\recruiter\controllers\base\Stu
             ];
         } 
     }
+
+    public function actionShowcomment()
+{
+    $id=$_POST['id'];
+    $recruiterNotes = \common\models\StudentEligibleNoteligible::find()->where(['student_id'=>$id])->all();
+    $view= $this->renderPartial('showeligible', [
+        'recruiterNotes' => $recruiterNotes,
+        ]);
+    return json_encode(['view'=>$view]);
+}
     public function actionIndex() {
         
         if(empty(Yii::$app->user->identity->recruiter->id)){
